@@ -1,11 +1,11 @@
 <header>
 	<div class="header">
-    <link rel="stylesheet" href="css/headercss.css" />
+    <link rel="stylesheet" href="css\headercss1.css" />
 	<title>
 	LeBonFoin</title>
 	<h1 class="headertitle">LeBonFoin</h1>
 	<nav>
-	<div class="Menu">
+	<div class="menu">
 		<ul>	
 			<li>Products</li>
 			<li>Cart</li>
