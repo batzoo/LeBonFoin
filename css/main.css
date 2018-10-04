@@ -1,0 +1,140 @@
+
+body {
+    margin: 0px;
+    --aside-width: 200px;
+    --horizontal-margin:10px;
+    --picture-width:200px;
+    /*--section-width:calc(98vw - var(--aside-width) - var(--horizontal-margin) );*/
+    padding-bottom:50px;
+}
+
+header
+{
+    text-align: center;
+    width:100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-bottom: 5px;
+    height: 100px;
+    background-color: cornflowerblue;
+}
+
+#welcomeMainImage{
+    display: block;
+    max-width:100%;
+    max-height: calc(100vh - 150px);
+    margin: 5px auto;
+}
+
+html
+{
+    background-color: white;
+}
+footer
+{
+
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    width:100%;
+    margin-left: 0px;
+    /* display: inline-block;*/
+    vertical-align: bottom;
+    background-color: red;
+    height: 50px;
+
+}
+
+.footerTampon{
+    height: 50px;
+}
+
+footer a
+{
+    color: green;
+    text-decoration:none;
+    vertical-align: center;
+}
+footer div
+{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    line-height: 50%;
+}
+nav {
+    text-align: left;
+    background-color: cornflowerblue;
+}
+nav a, nav span{
+    color:black;
+    text-decoration: none;
+    transition:color linear 0.2s;
+}
+
+nav a:hover, nav span:hover{
+    color:#ccc;
+}
+
+#headertitle {
+    font-size: 70px;
+    color: white;
+    text-decoration:none;
+}
+
+.menuCategory {
+    display: inline-block;
+    position:relative;
+    padding:5px 10px;
+
+}
+
+.withSeveralLinks {
+    display: none; 
+    position:absolute;   
+    left:-0px;
+    top:100%;
+    background-color: cornflowerblue;
+    padding:5px 10px;
+}
+
+.menuCategory:hover .withSeveralLinks {
+    display: block;
+}
+
+.contactType {
+    font-weight: bold;
+}
+
+
+aside {
+    width: var(--aside-width);
+    padding: var(--horizontal-margin);
+    text-align: left;
+    box-sizing:border-box;
+
+    background-color: darkgray;
+    border-radius: 10px;
+    position: fixed;
+    top: 140px;
+    right: var(--horizontal-margin);
+
+}
+
+section {
+    margin:30px var(--horizontal-margin);
+    /*width: var(--section-width);*/
+    padding-right: calc(var(--aside-width) + var(--horizontal-margin) )
+}
+
+
+
+
+#recipeImage {
+    max-height: 200px;
+    width: var(--picture-width);
+    float:left;
+    margin-right: var(--horizontal-margin);
+}
+
