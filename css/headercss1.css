@@ -1,15 +1,15 @@
 .headertitle {
-  position: top right;
+  position: relative;
   top: 1%;
-  right: 1%;
+  left: 40%;
   width: 18%;
   font-family: American Typewriter;
   font-size:50px;
+  color:rgb(150,150,0);
   
 }
-.menu{
-	background-color:rgb(212,10,0);
-}
 .header{
-	background-image: url("Images/foin.jpg")
+	background-color: rgb(210,15,0);
+}
+.menu{	background-color: rgb(210,15,0);
 }

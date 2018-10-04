@@ -6,13 +6,12 @@
 	<h1 class="headertitle">LeBonFoin</h1>
 	<nav>
 	<div class="menu">
-		<ul>	
-			<li>Products</li>
-			<li>Cart</li>
-			<li>Search</li>
-			<li>Log In</li>
-			<li>Sign Up</li>
-		</ul>
+			
+			<p>Products <img src="Images/foin.jpg" length="30"width="40">
+			Cart <img src="Images/cart.jpg" length="30"width="40">
+			Search<img src="Images/loupe.jpg" length="30"width="40">
+			Log In<img src="Images/login.png" length="30"width="40">
+			Sign Up<img src="Images/stylo.jpg" length="30"width="40"></p>
 	</div>
 </nav>
 </header>
