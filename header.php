@@ -20,7 +20,7 @@
 			<div class="menuCategory"><a href="ShoppingCart.php">Panier</a> </div>
 
 			<div class="menuCategory">
-			    <a href="contact.html">Contact us</a>
+			    <a href="contactUs.php">Contact us</a>
 			</div>
 		</nav>
 	</header>
