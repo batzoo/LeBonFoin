@@ -1,0 +1,40 @@
+header
+{
+    text-align: center;
+    width:100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-bottom: 5px;
+    height: 100px;
+    background-color: ForestGreen;
+}
+
+#headertitle {
+    font-size: 70px;
+    color: White;
+    text-decoration:none;
+}
+
+.menuCategory {
+    display: inline-block;
+    position:relative;
+    padding:5px 10px;
+}
+
+html
+{
+    background-color: white;
+}
+
+.withSeveralLinks {
+    display: none; 
+    position:absolute;   
+    left:-0px;
+    top:100%;
+    background-color: olive;
+    padding:5px 10px;
+}
+
+.menuCategory:hover .withSeveralLinks {
+    display: block;
+}
