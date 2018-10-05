@@ -1,10 +1,11 @@
 <head>
-
+    <link rel="stylesheet" href="css/Produits.css" />
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <link rel="shortcut icon" href="images/logopetit.jpg">
 </head>
 
-<header><a id="headertitle" href="main.php">LeBonFoin.fr</a>
+<header><a id="headertitle" href="Acceuil.php">LeBonFoin.fr</a>
 		<nav>
 
 			<div class="menuCategory"><a href="CreateAccountPage.php">Create Account</a> </div>
