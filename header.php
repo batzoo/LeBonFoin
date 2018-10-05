@@ -1,5 +1,7 @@
 <head>
+    <link rel="stylesheet" href="css/Produits.css" />
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
 </head>
 
 <header><a id="headertitle" href="main.php">LeBonFoin.fr</a>
