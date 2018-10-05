@@ -1,4 +1,6 @@
 <body>
+    <link rel ="stylesheet" href="css/format.css" />
+    <link rel ="stylesheet" href="css/main.css" />
     <?php include "header.php";?>    
     
     <section>

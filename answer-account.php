@@ -1,7 +1,8 @@
 <body>
     
     <?php include "header.php";?>   
-
+    <link rel ="stylesheet" href="css/format.css" />
+    <link rel ="stylesheet" href="css/main.css" />
     <section>
        <div href="main.html">
         	<img id="welcomeMainImage" src="Images/logo.jpg">
