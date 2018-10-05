@@ -5,7 +5,9 @@
     
     <section>
        <div href="main.html">
+            <center>
         	<img id="welcomeMainImage" src="Images/logo.jpg">
+            </center>
         </div>
     </section>
 
