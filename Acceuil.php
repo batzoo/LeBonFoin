@@ -1,18 +1,20 @@
 <body>
 	<?php include "header.php";?>
-
+	<link rel="stylesheet" href="css/Produits.css" />
 	<section>
 			<center>
-        	<img id="welcomeMainImage" src="Images/logo.jpg">
+        	<img id="welcomeMainImage" src="Images/logo.jpg" width='350' height='250'>
         	</center>
         </div>
     </section>
     <section>
-<?php
-    echo "<p style='text-align: center'>Bienvenue sur LeBonFoin.fr </p>";
-    echo "<p style='text-align: center'>Fournisseur officiel des agriculteurs des Haut-de-France depuis 1892 ! </p>";
-        echo "<p style='text-align: center'>Bonne navigation ! :) </p>";
-        echo "<p style='text-align: center'> </p>";?>
+
+<div class='titre'>
+    <h1>'Bienvenue sur LeBonFoin.fr'</h1></div>
+<div class='soustitre'>
+    <h1>Fournisseur officiel des agriculteurs des Haut-de-France depuis 1892 !</h1>
+    <h1>Bonne navigation ! :)</h1>
+</div>
     </section>
     <?php include "footer.php";?>
 </body>
