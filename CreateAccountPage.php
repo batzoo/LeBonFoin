@@ -14,7 +14,7 @@
         <label for="Pseudo">Pseudo :</label><input type="text" name="pseudo" /><br />
         <label for="mdp1">Mot de passe :</label><input type="text" name="mdp1" /><br />
         <label for="mdp2">Confirmer mdp :</label><input type="text" name="mdp2" /><br />
-        <input type='submit' >
+        <label>    </label><input type='submit' >
     </form>
     </div>
     <?php include "footer.php";?>

@@ -16,7 +16,7 @@ header
     margin-left: 0px;
     padding-bottom: 5px;
     height: 100px;
-    background-color: cornflowerblue;
+    background-color: ForestGreen;
 }
 
 #welcomeMainImage{
@@ -65,7 +65,7 @@ footer div
 }
 nav {
     text-align: left;
-    background-color: cornflowerblue;
+    background-color: olive;
 }
 nav a, nav span{
     color:black;
@@ -95,7 +95,7 @@ nav a:hover, nav span:hover{
     position:absolute;   
     left:-0px;
     top:100%;
-    background-color: cornflowerblue;
+    background-color: olive;
     padding:5px 10px;
 }
 
