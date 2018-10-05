@@ -16,8 +16,8 @@
 				
 		    	<span class="navtitle"><a href="Produits.php">Product</a></span>
 		    	<div class="withSeveralLinks">
-			    	<a href="foin.html">foin</a>
-			    	<a href="Tracteurs.html">Tracteurs</a>
+			    	<a href="foin.php">foin</a>
+			    	<a href="Tracteurs.php">Tracteurs</a>
 				</div>
 			</div>
 			<div class="menuCategory"><a href="ShoppingCart.php">Panier</a> </div>
