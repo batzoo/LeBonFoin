@@ -1,10 +1,11 @@
 <head>
-	<title>LeBonFoin.fr</title> 
     <link rel="stylesheet" href="css/header.css" />
 </head>
 
-<header><a id="headertitle" href="main.html">LeBonFoin.fr</a>
+<header><a id="headertitle" href="main.php">LeBonFoin.fr</a>
 		<nav>
+
+			<div class="menuCategory"><a href="CreateAccountPage.php">Create Account</a> </div>
 			<div class="menuCategory">
 			    <a href="search.html">Search</a>
 			</div>
@@ -16,7 +17,8 @@
 			    	<a href="Tracteurs.html">Tracteurs</a>
 				</div>
 			</div>
-			<div class="menuCategory"><a href="ShoppingCart.php">Panier</a></div>
+			<div class="menuCategory"><a href="ShoppingCart.php">Panier</a> </div>
+
 			<div class="menuCategory">
 			    <a href="contact.html">Contact us</a>
 			</div>
