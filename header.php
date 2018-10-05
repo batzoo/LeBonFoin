@@ -1,4 +1,5 @@
 <head>
+	<title>LeBonFoin.fr</title> 
     <link rel="stylesheet" href="css/header.css" />
 </head>
 

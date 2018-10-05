@@ -24,8 +24,6 @@
     
 
     </section>
-    <footer>
-        <div><a>Toutes nos equipes donnent le maximum pour vous satisfaire</a></div>
-    </footer>
+    <?php include "footer.php";?>
 </body>
 </html>
