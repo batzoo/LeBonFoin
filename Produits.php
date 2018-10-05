@@ -4,6 +4,7 @@
     <title>LeBonFoin.fr</title> 
     <link rel="stylesheet" href="css/Produits.css" />
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
 
 </head>
 <body>  
@@ -23,8 +24,6 @@
     	</div>
     		<img id="Mangeoire" src="Images/Mangeoire.jpg"> 
     </section>
-    <footer>
-        <div><a>Toutes nos equipes donnent le maximum pour vous satisfaire</a></div>
-    </footer>
+    <?php include "footer.php";?>
 </body>
 </html>
