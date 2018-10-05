@@ -16,7 +16,7 @@
 			    	<a href="Tracteurs.html">Tracteurs</a>
 				</div>
 			</div>
-			<div class="menuCategory"><a href="ShoppingCart.php">Panier</a> </div>
+			<div class="menuCategory"><a href="ShoppingCart.php">Panier</a></div>
 			<div class="menuCategory">
 			    <a href="contact.html">Contact us</a>
 			</div>
