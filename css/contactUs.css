@@ -9,8 +9,8 @@ body {
 
 
 
-.Qualification{
-    text-align: center;
+.Contact{
+	text-align: center;
     width:100%;
     margin-top: 0px;
     margin-left: 0px;
@@ -19,36 +19,25 @@ body {
     background-color: White;
 }
 
-#welcomeMainImage{
+#telephone{
+	display: block;
+    max-width:20%;
+    max-height: calc(100vh - 150px);
+    margin: 5px auto;
+}
+
+#email{
+    display: block;
+    max-width:20%;
+    max-height: calc(100vh - 150px);
+    margin: 5px auto;
+}
+
+#Fax{
     display: block;
     max-width:100%;
     max-height: calc(100vh - 150px);
     margin: 5px auto;
-
-}
-
-#FoinDeQualite{
-    display: block;
-    max-width:100%;
-    max-height: calc(100vh - 150px);
-    margin: 5px auto;
-
-}
-
-#Moisonneuse{
-    display: block;
-    max-width:40%;
-    max-height: calc(100vh - 150px);
-    margin: 5px auto;
-
-}
-
-#Mangeoire{
-    display: block;
-    max-width:40%;
-    max-height: calc(100vh - 150px);
-    margin: 5px auto;
-
 }
 
 nav {
@@ -64,11 +53,6 @@ nav a, nav span{
 nav a:hover, nav span:hover{
     color:#ccc;
 }
-
-.contactType {
-    font-weight: bold;
-}
-
 
 aside {
     width: var(--aside-width);
@@ -89,5 +73,3 @@ section {
     /*width: var(--section-width);*/
     padding-right: calc(var(--aside-width) + var(--horizontal-margin) )
 }
-
-
