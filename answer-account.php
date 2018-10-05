@@ -5,7 +5,9 @@
     <link rel ="stylesheet" href="css/main.css" />
     <section>
        <div href="main.html">
+            <center>
         	<img id="welcomeMainImage" src="Images/baptiste.jpg">
+            </center>
         </div>
     </section>
 

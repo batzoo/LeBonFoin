@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="css/footer.css" />
 </head>
 
-<header><a id="headertitle" href="main.php">LeBonFoin.fr</a>
+<header><a id="headertitle" href="Acceuil.php">LeBonFoin.fr</a>
 		<nav>
 
 			<div class="menuCategory"><a href="CreateAccountPage.php">Create Account</a> </div>
