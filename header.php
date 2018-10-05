@@ -10,7 +10,7 @@
 
 			<div class="menuCategory"><a href="CreateAccountPage.php">Create Account</a> </div>
 			<div class="menuCategory">
-			    <a href="search.html">Search</a>
+			    <a href="Search.php">Search</a>
 			</div>
 			<div class="menuCategory">
 				
