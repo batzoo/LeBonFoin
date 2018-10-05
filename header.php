@@ -7,7 +7,7 @@
 
 <header><a id="headertitle" href="Acceuil.php">LeBonFoin.fr</a>
 		<nav>
-
+			<div id="Menus">
 			<div class="menuCategory"><a href="CreateAccountPage.php">Create Account</a> </div>
 			<div class="menuCategory">
 			    <a href="search.html">Search</a>
@@ -25,5 +25,6 @@
 			<div class="menuCategory">
 			    <a href="contactUs.php">Contact us</a>
 			</div>
+		</div>
 		</nav>
 	</header>

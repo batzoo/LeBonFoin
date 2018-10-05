@@ -9,6 +9,13 @@ header
     background-color: ForestGreen;
 }
 
+#Menus{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
 #headertitle {
     font-size: 70px;
     color: White;
