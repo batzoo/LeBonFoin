@@ -5,7 +5,7 @@
     <link rel ="stylesheet" href="css/main.css" />
     <section>
        <div href="main.html">
-        	<img id="welcomeMainImage" src="Images/logo.jpg">
+        	<img id="welcomeMainImage" src="Images/baptiste.jpg">
         </div>
     </section>
 

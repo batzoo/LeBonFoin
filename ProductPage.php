@@ -16,14 +16,11 @@
     
 
     <!--MAIN CONTENT-->
-    <section>
-        <h1>PRODUCTNAME</h1>
-        <img id="productPage_main_image" src="Images/foin.jpg">
-
-
     
 
-    </section>
+
+
     <?php include "footer.php";?>
+
 </body>
 </html>
