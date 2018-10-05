@@ -1,0 +1,6 @@
+#productPage_main_image{
+    display: block;
+    max-width:100%;
+    max-height: calc(100vh - 150px);
+    margin: 5px auto;
+}
