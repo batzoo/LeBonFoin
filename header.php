@@ -1,5 +1,7 @@
 <head>
+
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="shortcut icon" href="images/logopetit.jpg">
 </head>
 
 <header><a id="headertitle" href="main.php">LeBonFoin.fr</a>
