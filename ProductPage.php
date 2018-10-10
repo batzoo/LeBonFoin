@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<?php
+// Sous WAMP (Windows)
+$bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '');
+
+?>
 
 <!--HEAD SECTION-->
 <head>
@@ -13,10 +18,14 @@
 
     <!--HEADER SECTION-->
 	<?php include "header.php";?>
-    
+    <?php $request = $bdd->query('SELECT name, description, unit_price FROM products');
 
-    <!--MAIN CONTENT-->
-    
+    while ($produit = $request->fetch(PDO::FETCH_ASSOC)) // Chaque entrée sera récupérée et placée dans un array.
+{
+  echo $produit['name'], '  description :  ', $produit['description'], '   !!! Coute : ', $produit['unit_price'], ' euros /////////////////// ';  
+
+}
+    ?>
 
 
 
