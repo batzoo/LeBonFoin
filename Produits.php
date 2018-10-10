@@ -2,27 +2,37 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/Produits.css" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-
+   <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;?>
 </head>
-<body>  
-	<?php include "header.php";?>
+ <?php include "header.php";?>
+<body>
     <section>
-        	<img id="welcomeMainImage" src="Images/logo.jpg">
-        <div class=Qualification>
-        <h1>Foins de qualite superieur</h1>
+        <div id="conteneur">
+        <div class="element">
+            <p><img src="Images/noir.jpg" width="200"> </p>
+            <p><?php $reponse=$bdd->query('SELECT name FROM products WHERE id="1"');
+                $nom=$reponse->fetch();
+            echo($nom['name']);
+            ?></p>
     	</div>
-        	<img id="FoinDeQualite" src="Images/FoinDeQualite.jpg"> 
-         <div class=Qualification>
-        <h1>Moisonneuse-batteuse John Deere</h1>
-    	</div>
-    		<img id="Moisonneuse" src="Images/Moisonneuse.jpg"> 
-    	<div class=Qualification>
-        <h1>Mangeoire a vaches grande capacite</h1>
-    	</div>
-    		<img id="Mangeoire" src="Images/Mangeoire.jpg"> 
-    </section>
+        	
+         <div class="element">
+            <p><img src="Images/noir.jpg"width="200"></p>
+            <p><?php $reponse=$bdd->query('SELECT name FROM products WHERE id="2"');
+                $nom=$reponse->fetch();
+            echo($nom['name']);
+            ?></p>
+            <p>Prix : </p>
+
+        </div>
+
+    		 
+    	<div class="element">
+            <p><img  src="Images/noir.jpg" width="200"></p>
+            <p>Mangoire incrustée de diamants</p>
+        </div>
+    </div> 
+</section>
     <?php include "footer.php";?>
-</body>
+</body>  
 </html>

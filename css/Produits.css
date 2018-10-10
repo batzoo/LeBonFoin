@@ -7,9 +7,13 @@ body {
     padding-bottom:50px;
 }
 
+#conteneur{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
 
-
-.Qualification{
+.element{
     text-align: center;
     width:100%;
     margin-top: 0px;

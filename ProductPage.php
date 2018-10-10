@@ -22,7 +22,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '')
 
     while ($produit = $request->fetch(PDO::FETCH_ASSOC)) // Chaque entrée sera récupérée et placée dans un array.
 {
-  echo $produit['name'], '  description :  ', $produit['description'], '   !!! Coute : ', $produit['unit_price'], ' euros /////////////////// ';  
+  echo $produit['name'], '  description :  ', $produit['description'], '   !!! Coute : ', $produit['unit_price'], ' euros ';  
 
 }
     ?>
