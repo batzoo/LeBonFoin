@@ -9,27 +9,38 @@
     <section>
         <div id="conteneur">
         <div class="element">
-            <p><img src="Images/noir.jpg" width="200"> </p>
-            <p><?php $reponse=$bdd->query('SELECT name FROM products WHERE id="1"');
+            <a href="foin.php">
+            <p><img src="Images/foin.jpg" width="200"> </p>
+            <p><?php $reponse=$bdd->query('SELECT name,unit_price FROM products WHERE id="1"');
                 $nom=$reponse->fetch();
-            echo($nom['name']);
+            echo($nom['name']);?>
+            <br/>
+            <?php
+            echo 'Prix : ', $nom['unit_price'], ' €/kg';
             ?></p>
-    	</div>
+    	</a></div>
         	
          <div class="element">
-            <p><img src="Images/noir.jpg"width="200"></p>
-            <p><?php $reponse=$bdd->query('SELECT name FROM products WHERE id="2"');
+            <p><img src="Images/Moisonneuse.jpg"width="200"></p>
+            <p><?php $reponse=$bdd->query('SELECT name,unit_price FROM products WHERE id="2"');
                 $nom=$reponse->fetch();
-            echo($nom['name']);
+            echo($nom['name']);?>
+            <br/>
+            <?php
+            echo 'Prix : ', $nom['unit_price'], ' €';
             ?></p>
-            <p>Prix : </p>
-
         </div>
 
     		 
     	<div class="element">
-            <p><img  src="Images/noir.jpg" width="200"></p>
-            <p>Mangoire incrustée de diamants</p>
+            <p><img  src="Images/Mangeoire.jpg" width="200"></p>
+            <p><?php $reponse=$bdd->query('SELECT name,unit_price FROM products WHERE id="3"');
+                $nom=$reponse->fetch();
+            echo($nom['name']);?>
+            <br/>
+            <?php
+            echo 'Prix : ', $nom['unit_price'], ' €';
+            ?></p>
         </div>
     </div> 
 </section>

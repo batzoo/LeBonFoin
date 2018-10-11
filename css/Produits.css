@@ -9,8 +9,7 @@ body {
 
 #conteneur{
     display: flex;
-    flex-direction:row;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .element{
@@ -19,8 +18,9 @@ body {
     margin-top: 0px;
     margin-left: 0px;
     padding-bottom: 5px;
-    height: 100px;
     background-color: White;
+    border-style: inset;
+    border-color: olive;
 }
 
 #welcomeMainImage{
