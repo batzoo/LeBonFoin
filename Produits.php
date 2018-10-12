@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="css/Produits.css" />
 
-   <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;?>
+    
 </head>
  <?php include "header.php";?>
 <body>
@@ -13,13 +13,11 @@
         <div class="element">
             <a href="foin.php">
             <p><img src="Images/foin.jpg" width="200"> </p>
-            <p id="texte"><?php $reponse=$bdd->query('SELECT name,unit_price FROM products WHERE id="1"');
+            <p id="texte"><?php $reponse=$bdd->query('SELECT name FROM products WHERE id="1"');
                 $nom=$reponse->fetch();
             echo($nom['name']);?>
             <br/>
-            <?php
-            echo 'Prix : ', $nom['unit_price'], ' €/kg';
-            ?></p>
+            </p>
     	</a></div>
         	
          <div class="element">
@@ -30,7 +28,10 @@
             <br/>
             <?php
             echo 'Prix : ', $nom['unit_price'], ' €';
-            ?></p>
+            ?>
+
+            <input id="addbutton" type="button" name="add">
+        </p>
         </div>
 
     		 
