@@ -10,8 +10,12 @@ body {
 #conteneur{
     display: flex;
     justify-content: center;
-}
 
+}
+#texte{
+    color:red;
+
+}
 .element{
     text-align: center;
     width:100%;
