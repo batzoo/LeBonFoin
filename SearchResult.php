@@ -3,9 +3,11 @@
  <body>
  	<div><?php
  		$recherche = $_POST["recherche"];
-		$reponse=$bdd->query('SELECT name,unit_price,description FROM products WHERE name="$recherche"');
-		//IL Y A TJRS UN PROBLEME DANS LA RECHERCHE
-                $nom=$reponse->fetch();
+		$reponse=$bdd->prepare('SELECT name,unit_price,description FROM products WHERE name=:recherche');
+		$reponse->execute(array(
+			'recherche'=>$recherche
+		));
+          		$nom=$reponse->fetch();
             echo($nom['name']);?>
             <br/>
             <?php
