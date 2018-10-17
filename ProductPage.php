@@ -18,13 +18,13 @@ $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '')
 
     <!--HEADER SECTION-->
 	<?php include "header.php";?>
-    <?php $request = $bdd->query('SELECT name, description, unit_price FROM products WHERE id = $_POST["ID"]');
+    <?php $request = $bdd->query('SELECT name, description, unit_price FROM products WHERE id = "$_POST["ID"]"');
 
-    $produit = $request->fetch(PDO::FETCH_ASSOC) // Chaque entrée sera récupérée et placée dans un array.
-{
-  echo $produit['name'], '  description :  ', $produit['description'], '   !!! Coute : ', $produit['unit_price'], ' euros ';  
+    
 
-}
+  echo $request['name'], '  description :  ', $request['description'], '   !!! Coute : ', $request['unit_price'], ' euros ';  
+
+
     ?>
 
 
