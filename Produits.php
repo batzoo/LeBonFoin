@@ -12,7 +12,7 @@
         <div id="conteneur">
         <div class="element">
             <a href="foin.php">
-            <p><img src="Images/foin.jpg" width="200"> </p>
+            <p><img src="Images/foin.jpg" width="210"> </p>
             <p id="texte"><?php $reponse=$bdd->query('SELECT name FROM products WHERE id="1"');
                 $nom=$reponse->fetch();
             echo($nom['name']);?>
@@ -21,7 +21,7 @@
     	</a></div>
         	
          <div class="element">
-            <p><img src="Images/Moisonneuse.jpg"width="200"></p>
+            <p><img src="Images/Moisonneuse.jpg"width="250"></p>
             <p id="texte"><?php $reponse=$bdd->query('SELECT name,unit_price FROM products WHERE id="2"');
                 $nom=$reponse->fetch();
             echo($nom['name']);?>
