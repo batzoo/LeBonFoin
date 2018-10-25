@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <body>
 	<?php include "header.php";?>
 	<link rel="stylesheet" href="css/Produits.css" />
