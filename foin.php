@@ -1,4 +1,6 @@
-
+<?php
+session_start()
+?>
 <body>
 <?php include "header.php";?>
 <div id="conteneur">

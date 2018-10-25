@@ -19,3 +19,13 @@
     text-decoration:none;
 }
 
+#tittle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.soustitre:nth-child(2) {
+	align-self: flex-end;
+}
