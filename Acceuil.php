@@ -12,7 +12,6 @@ session_start()
     </section>
     <section>
 <?php 
-session_start();
 $pseudoCo=$_SESSION['pseudo'];
 ?>
 

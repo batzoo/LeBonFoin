@@ -13,13 +13,16 @@ session_start()
             </center>
         </div>
     </section>
-
+    <?php  $pseudo="";?>
     <div class=Formulaire>
     <form action='answer-account.php' method='POST'>
         <label for="Pseudo">Pseudo :</label><input type="text" name="pseudo" /><br />
         <label for="mdp1">Mot de passe :</label><input type="text" name="mdp1" /><br />
-        <label for="mdp2">Confirmer mdp :</label><input type="text" name="mdp2" /><br />
+        <label for="mdp2">Confirmer mdp :</label><input type="text" name="mdp2" o /><br />
         <label>    </label><input type='submit' >
+
+       <?php  $bdd->exec('INSERT INTO users(id,username,password) VALUES(\'\',\'$_POST[\'pseudo\']\',\'$_POST[\'mdp1\']\'');
+       ?>
     </form>
     </div>
     <?php include "footer.php";?>

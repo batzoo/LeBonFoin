@@ -22,6 +22,7 @@ session_start()
             $reponse2=$bdd->query('SELECT name FROM products WHERE id="1"');
                 $nom=$reponse->fetch();
                 $nom1=$reponse2->fetch();
+                $total=0;
             echo $nom1['name'],'      Quantité : ',$nom['quantity'],'      Prix : ',$nom['unit_price'],' €';?>
             <br/>
             </p>
@@ -44,7 +45,7 @@ session_start()
             <br/>
             </p>
         </div>
-        <div class="element"><p>TOTAL:
+        <div class="element"><p>TOTAL: 
         </p></div>
     </div> 
 </section>

@@ -32,8 +32,13 @@ session_start()
             <?php
             echo 'Prix : ', $nom['unit_price'], ' €';
             ?>
+            <form>
+            <input id="addbutton" type="button" name="add" onclick="">
 
-            <input id="addbutton" type="button" name="add">
+            </form>
+
+
+            </form>
         </p>
         </div>
 
