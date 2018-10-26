@@ -5,34 +5,37 @@
 ?>
 
 <?php
-session_start(include 'checkUser.php');
+session_start();
+include 'checkUser.php';
 //TODO include checkUser.php file
 ?>
 
 <?php
-	$_SESSION['pseudo']=$_POST["pseudoConnexion"]; 
-	$_SESSION['mdp']=$_POST['mdpConnexion'];
-	$controlUser = $_SESSION['pseudo'];
-	$controlMdp = $_SESSION['mdp'];
+	if (empty($_POST["pseudoConnexion"])==FALSE):{
+		$_SESSION['pseudo']=$_POST["pseudoConnexion"]; 
+		$_SESSION['mdp']=$_POST['mdpConnexion'];
+		$controlUser = $_SESSION['pseudo'];
+		$controlMdp = $_SESSION['mdp'];
 
-	$reponse=$bdd->prepare('SELECT username FROM users WHERE username=:recherche1 and password=:recherche2');
-			$reponse->execute(array(
-				'recherche1'=>$controlUser,
-				'recherche2'=>$controlMdp
-			));
-	          		$nom=$reponse->fetch();
-	          	?>
+		$reponse=$bdd->prepare('SELECT username FROM users WHERE username=:recherche1 and password=:recherche2');
+				$reponse->execute(array(
+					'recherche1'=>$controlUser,
+					'recherche2'=>$controlMdp
+				));
+		          		$nom=$reponse->fetch();
+		          	?>
 
-	        <?php if ($nom == null): 
-	        	echo('erreur, pseudo invalide');
-	        else:
-	        	echo('connexion validée, cliquez ci-dessous');
-	        	?>
-	        	<form action="Acceuil.php" method="POST">
-	                <label>    </label><input type='submit' >
-	    	</form>	
-	       <?php endif 
-
+		        <?php if ($nom == null): 
+		        	echo('erreur, pseudo invalide');
+		        else:
+		        	echo('connexion validée, cliquez ci-dessous');
+		        	?>
+		        	<form action="Acceuil.php" method="POST">
+		                <label>    </label><input type='submit' >
+		    	</form>	
+		       <?php endif
+		       ;}
+	endif	       
 //TODO (in the next step) control user access
 ?>
 
