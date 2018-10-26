@@ -35,14 +35,14 @@ endif
     <title>LeBonFoin.fr</title> 
     <link rel="stylesheet" href="css/ProductPage.css" />
     <link rel="stylesheet" href="css/Header.css" />
-    <?php include "header.php";?>
+    
 </head>
 
 <!--BODY SECTION-->
 <body>
 	<section id="conteneur">
 		<div id="element">
-			<img src="Images/<?php echo $productname ?>.jpg" width="210">
+			<img src="Images/images_produit/<?php echo $productname ?>.png" width="210">
 			<p>
 				<?php echo ($productdesc); ?>
 				<br/>

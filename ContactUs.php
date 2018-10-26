@@ -7,7 +7,6 @@
 
 </head>
 <body>  
-	<?php include "header.php";?>
     <section>
     	<div class=Contact>
         <h1>N'hesitez pas à nous contacter en cas de problème:</h1>
