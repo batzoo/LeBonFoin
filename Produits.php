@@ -23,28 +23,25 @@ session_start()
         <?php
         //chargement d'un tableau $products contenant nom,desc et prix de tous les produits de la BDD
         
-        $reponse = $bdd->query('SELECT name,description,unit_price FROM products');
+        $reponse = $bdd->query('SELECT name,description,unit_price,id FROM products');
         $products= array();
         $i=0;
         while ($donnees = $reponse->fetch()){
-            $products[$i]['name']=$donnees['name'];
-            $products[$i]['description']=$donnees['description'];
-            $products[$i]['unit_price']=$donnees['unit_price'];
-            $i++;
-        }
-        for($k=0;$k<count($products)-1;$k=$k+1)
-        ?>
+            ?>
             <div id="conteneur">
                 <div id="block">
-                    <a href="ProductPage.php?productid=<?php echo $k?>">    
-                        <img src="image/<?php echo $products[$k]["name"]?>.png">
-                        <p><big><?php echo $products[$k]["name"]?></big> </p>
-                        <p><?php echo $products[$k]["description"]?></p>
-                        <p>Price : <?php echo $products[$k]["unit_price"]?> €</p>
+                    <a href="ProductPage.php?productid=<?php echo $donnees["id"]?>">    
+                        <img src="Images/<?php echo $donnees["name"]?>.png">
+                        <p><big><?php echo $donnees["name"]?></big> </p>
+                        <p><?php echo $donnees["description"]?></p>
+                        <p>Price : <?php echo $donnees["unit_price"]?> €</p>
                     </a>
                 </div>
-                
             </div>
+        <?php    
+        }?>
+        
+            
 
 
 
@@ -53,20 +50,7 @@ session_start()
 
 
 
-        	<div class="element">
-                <p>
-                    <img  src="Images/Mangeoire.jpg" width="200">
-                </p>
-                <p id="texte">
-                    <?php $reponse=$bdd->query('SELECT name,unit_price FROM products WHERE id="3"');
-                    $nom=$reponse->fetch();
-                    echo($nom['name']);?>
-                    <br/>
-                    <?php
-                    echo 'Prix : ', $nom['unit_price'], ' €';
-                    ?>
-                </p>
-            </div>
+        	
 
         </div> 
     </section>
