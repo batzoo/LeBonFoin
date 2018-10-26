@@ -1,8 +1,4 @@
-<?php
-session_start()
-?>
 <body>
-	<?php include "header.php";?>
 	<link rel="stylesheet" href="css/Produits.css" />
 	<section>
 			<center>
@@ -23,5 +19,4 @@ $pseudoCo=$_SESSION['pseudo'];
     <h1>Bonne navigation ! :)</h1>
 </div>
     </section>
-    <?php include "footer.php";?>
 </body>

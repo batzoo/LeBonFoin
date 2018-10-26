@@ -30,7 +30,7 @@ include 'checkUser.php';
 		        else:
 		        	echo('connexion validée, cliquez ci-dessous');
 		        	?>
-		        	<form action="Acceuil.php" method="POST">
+		        	<form action="index.php?page=Acceuil" method="POST">
 		                <label>    </label><input type='submit' >
 		    	</form>	
 		       <?php endif
@@ -40,6 +40,12 @@ include 'checkUser.php';
 ?>
 
 <?php
+	if(isset($_GET['page'])){
+	$page=$_GET['page'];
+	include $page.'.php';}
+	else{
+		die;
+	}
 //TODO get page parameter ($_GET['page'] or $_POST['page']) and assign it into $page variable
 
 //if 'action/'.$page'.php' exists then include it (use file_exists($filename) function)

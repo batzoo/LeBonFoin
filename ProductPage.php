@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <?php
@@ -51,9 +50,7 @@ endif
 			</p>
 		</div>
 	</section>
-
-
-
+	
     <?php include "footer.php";?>
 
 </body>

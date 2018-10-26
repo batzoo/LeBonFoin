@@ -3,10 +3,11 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="shortcut icon" href="images/logopetit.jpg">
-    <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;?>
+    <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonfoin;charset=utf8', 'root', '') ;?>
 </head>
 
 <header><a id="headertitle" href="Acceuil.php">LeBonFoin.fr</a>
+		
 		<nav>
 			<div id="Menus">
 			<div class="menuCategory"><a href="CreateAccountPage.php">Create Account</a> </div>
