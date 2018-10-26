@@ -1,34 +1,56 @@
-<?php
-session_start()
-?>
+
 <!DOCTYPE html>
 <html>
 <?php
 // Sous WAMP (Windows)
 $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '');
-
 ?>
 
+<?php 
+if (isset($_GET['productid'])){
+    $productid= $_GET['productid'];
+} else {
+    include 'produits.php';
+    die;
+} 
+$verif=FALSE;
+$verifreq=$bdd->query('SELECT id FROM products');
+while($donnees=$verifreq->fetch()){
+	if($productid==$donnees['id']){
+		$verif=TRUE;
+	}
+} 
+
+if($verif==TRUE):
+	$reponse0 = $bdd->prepare('SELECT name,description,unit_price FROM products WHERE id=:id');
+$reponse0->execute(array('id' => $productid ));
+$donnees = $reponse0->fetch();
+$productname=$donnees['name'];
+$productdesc=$donnees['description'];
+$productprice=$donnees['unit_price'];
+
+endif
+?>
 <!--HEAD SECTION-->
 <head>
     <title>LeBonFoin.fr</title> 
     <link rel="stylesheet" href="css/ProductPage.css" />
     <link rel="stylesheet" href="css/Header.css" />
+    <?php include "header.php";?>
 </head>
 
 <!--BODY SECTION-->
 <body>
-
-    <!--HEADER SECTION-->
-	<?php include "header.php";?>
-    <?php $request = $bdd->query('SELECT name, description, unit_price FROM products WHERE id = "$_POST["ID"]"');
-
-    
-
-  echo $request['name'], '  description :  ', $request['description'], '   !!! Coute : ', $request['unit_price'], ' euros ';  
-
-
-    ?>
+	<section id="conteneur">
+		<div id="element">
+			<img src="Images/<?php echo $productname ?>.jpg" width="210">
+			<p>
+				<?php echo ($productdesc); ?>
+				<br/>
+				<?php echo "Prix : ", $productprice," €";?>
+			</p>
+		</div>
+	</section>
 
 
 
