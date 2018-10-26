@@ -37,6 +37,11 @@ body {
 
 }
 
+#productImg{
+    max-width:40%;
+    max-height:40%;
+}
+
 #FoinDeQualite{
     display: block;
     max-width:100%;

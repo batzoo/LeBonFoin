@@ -37,9 +37,9 @@
             ?>
                 <div id="block">
                     <a href="ProductPage.php?productid=<?php echo $donnees["id"]?>">    
-                        <img src="Images/<?php echo $donnees["name"]?>.png">
+                        <img id=productImg src="Images/images_produit/<?php echo $donnees["name"]?>.png">
                         <p><big><?php echo $donnees["name"]?></big> </p>
-                        <p>Price : <?php echo $donnees["unit_price"]?> €</p>
+                        <p>Price : <?php echo $donnees["unit_price"]?> €/Kg</p>
                     </a>
                 </div>
         <?php  
