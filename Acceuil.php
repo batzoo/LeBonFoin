@@ -10,8 +10,7 @@
     <section>
 <?php 
 session_start();
-$_SESSION['pseudo']=$_POST["pseudoConnexion"];
-$pseudoCo = $_SESSION['pseudo'];
+$pseudoCo=$_SESSION['pseudo'];
 ?>
 
 <div class='titre'>

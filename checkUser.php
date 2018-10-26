@@ -8,11 +8,9 @@
     <h1>Connexion</h1></div>
 
    <div class=Formulaire>
-    <form action='Acceuil.php' method='POST'>
+    <form action='index.php' method='POST'>
         <label for="PseudoCo">Pseudo :</label><input type="text" name="pseudoConnexion" /><br />
         <label for="mdp3">Mot de passe :</label><input type="text" name="mdpConnexion" /><br />
         <label>    </label><input type='submit' >
     </form>
-
- 	</div>
  </body>
