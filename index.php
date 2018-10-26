@@ -6,36 +6,11 @@
 
 <?php
 session_start();
-include 'checkUser.php';
+include 'header.php';
 //TODO include checkUser.php file
 ?>
 
-<?php
-	if (empty($_POST["pseudoConnexion"])==FALSE):{
-		$_SESSION['pseudo']=$_POST["pseudoConnexion"]; 
-		$_SESSION['mdp']=$_POST['mdpConnexion'];
-		$controlUser = $_SESSION['pseudo'];
-		$controlMdp = $_SESSION['mdp'];
-
-		$reponse=$bdd->prepare('SELECT username FROM users WHERE username=:recherche1 and password=:recherche2');
-				$reponse->execute(array(
-					'recherche1'=>$controlUser,
-					'recherche2'=>$controlMdp
-				));
-		          		$nom=$reponse->fetch();
-		          	?>
-
-		        <?php if ($nom == null): 
-		        	echo('erreur, pseudo invalide');
-		        else:
-		        	echo('connexion validée, cliquez ci-dessous');
-		        	?>
-		        	<form action="index.php?page=Acceuil" method="POST">
-		                <label>    </label><input type='submit' >
-		    	</form>	
-		       <?php endif
-		       ;}
-	endif	       
+     <?php
 //TODO (in the next step) control user access
 ?>
 
@@ -64,6 +39,7 @@ include 'checkUser.php';
 
 
 
+
 //TODO add header display
 ?>
 
@@ -83,3 +59,7 @@ include 'checkUser.php';
 
 // TODO insert the end html envelope (</body></html>)
 ?>
+<footer>
+	<?php include 'footer.php';?>
+	
+</footer>

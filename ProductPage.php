@@ -9,7 +9,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '')
 if (isset($_GET['productid'])){
     $productid= $_GET['productid'];
 } else {
-    include 'produits.php';
+    include 'index.php?page=Produits';
     die;
 } 
 $verif=FALSE;
@@ -50,8 +50,6 @@ endif
 			</p>
 		</div>
 	</section>
-	
-    <?php include "footer.php";?>
 
 </body>
 </html>

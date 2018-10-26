@@ -1,8 +1,8 @@
+
 <body>
     <link rel ="stylesheet" href="css/format.css" />
     <link rel ="stylesheet" href="css/main.css" />
-    <?php include "header.php";?>    
-    
+
     <section>
        <div href="main.html">
             <center>
@@ -24,5 +24,4 @@
        ?>
     </form>
     </div>
-    <?php include "footer.php";?>
 </body>
