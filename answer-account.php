@@ -1,6 +1,3 @@
-<?php
-session_start()
-?>
 <body>
     
     <?php include "header.php";?>   
@@ -16,10 +13,22 @@ session_start()
 
     <section>
 
-<?php 
-echo "<p>Votre compte a bien été créé, " . $_POST["pseudo"] . "</p>" ;
-?>
+<?php
 
+    if($_POST["mdp1"]==$_POST["mdp2"]){ 
+   $write=$bdd->prepare('INSERT INTO users(username, email, password) VALUES (:pseudo, :email, :mdp)');
+   $write->execute(array(
+       'pseudo' => $_POST["pseudo"],
+       'mdp' => $_POST["mdp1"],
+       'email' => $_POST["email"]
+    ));
+   echo "<p>Votre compte a bien été créé, " . $_POST["pseudo"] . "</p>" ;
+}
+    else{
+        echo "<p>Desole mais vos deux mot de passe sont différents </p>";
+    }
+    
+?>
     </section>
     <?php include "footer.php";?>
 </body>
