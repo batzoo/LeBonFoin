@@ -1,4 +1,3 @@
-
 <body>
 	<p><br/></p>
 	<form action='SearchResult.php' method='POST'>
