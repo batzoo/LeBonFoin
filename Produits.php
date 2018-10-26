@@ -32,7 +32,7 @@ session_start()
             $products[$i]['unit_price']=$donnees['unit_price'];
             $i++;
         }
-        for($k=0;$k<count($products)-1;$k=$k+2)
+        for($k=0;$k<count($products)-1;$k=$k+1)
         ?>
             <div id="conteneur">
                 <div id="block">
@@ -43,14 +43,7 @@ session_start()
                         <p>Price : <?php echo $products[$k]["unit_price"]?> €</p>
                     </a>
                 </div>
-                <div id="block">
-                    <a href="ProductPage.php?productid=<?php echo $k+1?>">    
-                        <img src="image/<?php echo $products[$k]["name"]?>.png">
-                        <p><big><?php echo $products[$k+1]["name"]?></big> </p>
-                        <p><?php echo $products[$k+1]["description"]?></p>
-                        <p>Price : <?php echo $products[$k+1]["unit_price"]?> €</p>
-                    </a>
-                </div>
+                
             </div>
 
 
