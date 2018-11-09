@@ -2,10 +2,12 @@
 
 <?php  $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;
 //TODO assign database connexion into $database variable
+session_start();
+include 'header.php';
 ?>
 
 <?php
-session_start();
+
 ?>
 
      <?php
@@ -16,19 +18,8 @@ session_start();
 	if(!empty($_GET['page'])){
 		$page=$_GET['page'];
 		
-		if (file_exists('actions/'.$page.'.php')){
-
-			include('actions/'.$page.'.php');
-		}
-		elseif(file_exists('view/'.$page.'.php')){
-			include 'header.php';
-			include('view/'.$page.'.php');
-		}
-		else{
-		header('location: index.php?page=accueil');
-	}
-	}
-
+		include $page.'.php';	
+}
 
 //create one php file for each action to manage on the website
 
