@@ -29,6 +29,16 @@
           'pseudo' => $_POST["pseudo"],
           'mdp' => $_POST["mdp1"],
           'email' => $_POST["email"]));
+
+
+
+          
+
+          $write = $bdd -> prepare ('INSERT INTO orders(user_id,type,status,amount,billing_adress_id,delivery_adress_id) VALUES (:usrid,CART,CART,0,NULL,NULL)');
+          $write -> execute(array(
+            'usrid' => $user_id
+          ));
+
           echo "<p>Votre compte a bien été créé, " . $_POST["pseudo"] . "</p>" ;
         }
     }
