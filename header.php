@@ -1,28 +1,49 @@
 <head>
+	<link rel ="stylesheet" href="css/format.css" />
     <link rel="stylesheet" href="css/Produits.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="shortcut icon" href="images/logopetit.jpg">
-    <link rel="stylesheet" href="css/connexion.css" />
     <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonfoin;charset=utf8', 'root', '') ;?>
 </head>
 
 <header>
+<div id="Menus">
+<!--<div class="title">  </div>-->
+<div class="connect"><a id="headertitle" href="index.php?page=Acceuil">LeBonFoin.fr</a></div>	
 
-<a id="headertitle" href="index.php?page=Acceuil">LeBonFoin.fr</a>	
+	<?php 
+	if(empty($_SESSION['pseudo'])==true){ ?>
+		<div class="connect">
+		</br>
+		<form action='index.php?page=checkUser' method='POST'>
+			<label for="PseudoCo">Pseudo :</label><input type="text" name="pseudoConnexion" /><br />
+			<label for="mdp3">Mot de passe :</label><input type="text" name="mdpConnexion" /><br />
+			<label>    </label><input type='submit' >
+		</form>
+		</div>		
+<?php }
+	else { ?>		
+		<div class="connect">
+		</br>
+		<?php echo 'Vous êtes connectés, ', $_SESSION['pseudo'];?>
+		</br>
+		<?php	echo 'Deconnexion :';
+		?>
+		</br>
+		<form action="index.php" method="POST">
+        <input type='submit' name='deconnexion' ></form>
+	</div>
+</div>
 
-<connexion><div class=connexion>
-    <form action='index.php?page=checkUser' method='POST'>
-        <label for="PseudoCo">Pseudo :</label><input type="text" name="pseudoConnexion" /><br />
-        <label for="mdp3">Mot de passe :</label><input type="text" name="mdpConnexion" /><br />
-        <label>    </label><input type='submit' >
-    </form>
-	</connexion> 
+	<?php }
+		if (isset($_POST['deconnexion'])){
+			session_unset(); 
+		}
+	?>
 
-	  
 
-	
-
+</div>
 		<nav>
 			<div id="Menus">
 			<div class="menuCategory"><a href="index.php?page=createAccount">Create Account</a> </div>
@@ -42,3 +63,4 @@
 		</div>
 		</nav>
 	</header>
+
