@@ -15,6 +15,17 @@
     $controlUser = $_SESSION['pseudo'];
     $controlMdp = $_SESSION['mdp'];
 
+    $user_id_ = $bdd->prepare('SELECT id FROM users WHERE username=:usrnm AND password=:pswrd ');
+    $user_id_ -> execute(array(
+      'usrnm' => $_SESSION["pseudo"],
+      'pswrd' => $_SESSION["mdp"]
+    ));
+    if($data = $user_id_ -> fetch()){
+      $user_id = $data[0];
+    }
+
+    $_SESSION['id']=$user_id;
+
     $reponse=$bdd->prepare('SELECT username FROM users WHERE username=:recherche1 and password=:recherche2');
         $reponse->execute(array(
           'recherche1'=>$controlUser,

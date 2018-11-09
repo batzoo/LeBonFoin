@@ -71,18 +71,8 @@ endif
 							echo"Quantité invalide";
 						}
 					    else{
-
-					     	$user_id_ = $bdd->prepare('SELECT id FROM users WHERE username=:usrnm AND password=:pswrd ');
-					     	$user_id_ -> execute(array(
-					     		'usrnm' => $_SESSION["pseudo"],
-					     		'pswrd' => $_SESSION["mdp"]
-					     	));
-					     	if($data = $user_id_ -> fetch()){
-					     		$user_id = $data[0];
-					     	}
-
 					     	$order_cart_id_ = $bdd->prepare("SELECT id FROM orders WHERE user_id=:usrid AND type='CART' ");
-					     	$order_cart_id_ -> execute(array('usrid'=>$user_id));
+					     	$order_cart_id_ -> execute(array('usrid'=>$_SESSION['id']));
 					     	if($data = $order_cart_id_ -> fetch()){
 					     		echo $data;
 					     		$order_cart_id = $data[0];
