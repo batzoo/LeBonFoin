@@ -12,7 +12,6 @@ session_start();
     <title>LeBonFoin.fr</title> 
     <link rel="stylesheet" href="css/Produits.css" />
     <link rel="stylesheet" href="css/Header.css" />
-    <?php include "header.php";?>
 </head>
 
 <!--BODY SECTION-->
