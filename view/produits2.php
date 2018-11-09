@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ================================== -->
+
+<head>
+    <link rel="stylesheet" href="css/Produits.css" />
+</head>
+
+<!-- ================================== -->
+
+
+ 
+<!-- ================================== -->
 
 <body>
     <STYLE>A {text-decoration: none;} </STYLE>
@@ -21,10 +35,11 @@
 
             ?>
                 <div id="block">
-                    <a href="index.php?page=ProductPage&productid=<?php echo $donnees["id"]?>">    
+                    <a href="index.php?page=PageProduit&productid=<?php echo $donnees["id"]?>">    
                         <img id=productImg src="Images/images_produit/<?php echo $donnees["name"]?>.png">
                         <p><big><?php echo $donnees["name"]?></big> </p>
                         <p>Price : <?php echo $donnees["unit_price"]?> €/Kg</p>
+                         
                     </a>
                 </div>
         <?php  
@@ -37,3 +52,9 @@
     </section>
     
 </body>  
+
+<!-- ================================== -->
+
+
+
+<!-- ===========

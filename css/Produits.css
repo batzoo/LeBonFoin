@@ -6,11 +6,15 @@ body {
     padding-bottom:50px;
 }
 
+<<<<<<< HEAD
+
+=======
 #conteneur{
     display: flex;
     justify-content: center;
-
+    
 }
+>>>>>>> cf79fb28a92bb7f85f1272b8db991b0ed2ecbe41
 #texte{
     color:red;
 
@@ -18,15 +22,66 @@ body {
 #addbutton{
     
 }
+
+#conteneur{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    align-content space-around;
+    flex-wrap: wrap;
+
+}
+
 .element{
-    text-align: center;
+
     width:100%;
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-bottom: 5px;
+    margin-top: 1px;
+    margin-left: 1px;
+    padding-bottom: 0px;
     background-color: White;
-    border-style: inset;
-    border-color: olive;
+
+    border-style: solid;
+    border-color: ForestGreen;
+    border-width: 3px;
+    height: 300px;
+    width: 250px;
+}
+
+.lastElement{
+
+    align-self: flex-end
+    
+
+    width:100%;
+    margin-top: 1px;
+    margin-left: 1px;
+    padding-bottom: 0px;
+    background-color: White;
+
+    border-style: solid;
+    border-color: ForestGreen;
+    border-width: 3px;
+    height: 80px;
+    width: 250px;
+
+}
+
+#cart{
+    display: block;
+    max-width:100%;
+    max-height: calc(100vh - 150px);
+    margin: 5px auto;
+}
+
+.recapCommande{
+    color:olive;
+    text-align: center;
+}
+
+.prixCommande{
+    color:olive;
+    text-align: center;  
 }
 
 #welcomeMainImage{

@@ -43,12 +43,55 @@ endif
 	<section id="conteneur">
 		<div id="element">
 			<img src="Images/images_produit/<?php echo $productname ?>.png" width="210">
+			<h4> <?php echo ($productname); ?> </h4>
 			<p>
+				
 				<?php echo ($productdesc); ?>
 				<br/>
 				<?php echo "Prix : ", $productprice," €";?>
 			</p>
 		</div>
+		<div class=Formulaire>
+    		<form method="post">
+
+        		<label for="Quantity">Quantité (en kg) :</label>
+
+        		<input type="number" name="quantity" /><br />
+        		
+        		<input type='submit' value="Ajouter">
+
+    		</form>
+    		<?php
+    			if( isset( $_SESSION )){
+					if( isset($_POST['quantity']) ){
+						if($_POST['quantity']<=0){
+							echo"Quantité invalide";
+						}
+					    else{
+					    	echo $_POST['quantity'];
+					     	echo " kg de "; 
+					     	echo $productname;
+					     	echo " ajoutés au panier !";
+
+					     	$user_id = $bdd->query('SELECT id FROM users WHERE username=$_SESSION["pseudo"] AND password=$_SESSION["mdp"] ');
+
+					     	$order_cart_id = $bdd->query('SELECT id FROM orders WHERE user_id=$user_id AND type="CART"' );
+
+					     	$write=$bdd->prepare('  INSERT INTO order_products(order_id, product_id, quantity, unit_price) VALUES (:orid,:prid,:qtt,:unpr)  ');
+					     	$write -> execute(array(
+					     		'orid' =>  $order_cart_id,
+					     		'prid' => $productid ,
+					     		'qtt' => $_POST['quantity'],
+					     		'unpr' => $productprice 
+					     	));
+					    }
+					    
+					}
+				}
+
+    		?>
+
+    	</div>
 	</section>
 
 </body>
