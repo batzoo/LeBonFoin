@@ -17,7 +17,7 @@
         <label for="email">email :</label><input type="text" name="email" /><br />
         <label for="mdp1">Mot de passe :</label><input type="text" name="mdp1" /><br />
         <label for="mdp2">Confirmer mdp :</label><input type="text" name="mdp2" o /><br />
-        <label>    </label><input type='submit' >
+        <label>    </label><input type="submit" value="Soumettre">
 
        <?php  
     //$bdd->exec('INSERT INTO users(id,username,password) VALUES(\'\',\'$_POST[\'pseudo\']\',\'$_POST[\'mdp1\']\'');
