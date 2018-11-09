@@ -18,9 +18,7 @@
         <label for="mdp2">Confirmer mdp :</label><input type="text" name="mdp2" o /><br />
         <label>    </label><input type='submit' >
 
-       <?php  
-    //$bdd->exec('INSERT INTO users(id,username,password) VALUES(\'\',\'$_POST[\'pseudo\']\',\'$_POST[\'mdp1\']\'');
-       ?>
+      
     </form>
     </div>
 </body>
