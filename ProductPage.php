@@ -9,7 +9,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '')
 if (isset($_GET['productid'])){
     $productid= $_GET['productid'];
 } else {
-    include 'produits.php';
+    include 'index.php?page=Produits';
     die;
 } 
 $verif=FALSE;
@@ -35,14 +35,14 @@ endif
     <title>LeBonFoin.fr</title> 
     <link rel="stylesheet" href="css/ProductPage.css" />
     <link rel="stylesheet" href="css/Header.css" />
-    <?php include "header.php";?>
+    
 </head>
 
 <!--BODY SECTION-->
 <body>
 	<section id="conteneur">
 		<div id="element">
-			<img src="Images/<?php echo $productname ?>.jpg" width="210">
+			<img src="Images/images_produit/<?php echo $productname ?>.png" width="210">
 			<p>
 				<?php echo ($productdesc); ?>
 				<br/>
@@ -50,8 +50,6 @@ endif
 			</p>
 		</div>
 	</section>
-	
-    <?php include "footer.php";?>
 
 </body>
 </html>

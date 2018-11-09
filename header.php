@@ -6,26 +6,27 @@
     <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonfoin;charset=utf8', 'root', '') ;?>
 </head>
 
-<header><a id="headertitle" href="Acceuil.php">LeBonFoin.fr</a>
-		
+<header><a id="headertitle" href="index.php?page=Acceuil">LeBonFoin.fr</a>
+
 		<nav>
 			<div id="Menus">
-			<div class="menuCategory"><a href="CreateAccountPage.php">Create Account</a> </div>
+			<div class="menuCategory"><a href="index.php?page=CreateAccountPage">Create Account</a> </div>
 			<div class="menuCategory">
-			    <a href="Search.php">Search</a>
+			    <a href="index.php?page=Search">Search</a>
 			</div>
 			<div class="menuCategory">
 				
-		    	<span class="navtitle"><a href="Produits.php">Product</a></span>
-		    	<div class="withSeveralLinks">
-			    	<a href="foin.php">foin</a>
-			    	<a href="Tracteurs.php">Tracteurs</a>
-				</div>
+		    	<span class="navtitle"><a href="index.php?page=Produits">Product</a></span>
+		    	
 			</div>
+<<<<<<< HEAD
 			<div class="menuCategory"><a href="ShoppingCart.php">Cart</a> </div>
+=======
+			<div class="menuCategory"><a href="index.php?page=ShoppingCart">Panier</a> </div>
+>>>>>>> dfd500dbe9787cb44b5989fc947abdba7484ee6b
 
 			<div class="menuCategory">
-			    <a href="contactUs.php">Contact us</a>
+			    <a href="index.php?page=ContactUs">Contact us</a>
 			</div>
 		</div>
 		</nav>

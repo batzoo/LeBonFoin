@@ -1,6 +1,6 @@
 <body>
 	<p><br/></p>
-	<form action='SearchResult.php' method='POST'>
+	<form action='index.php?page=SearchResult' method='POST'>
 	<label for="recherche">Rechercher : </label><input type="text" name="recherche" />
 	<input type="submit">
 </form>

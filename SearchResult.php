@@ -1,4 +1,4 @@
-<body><?php include "header.php";?>
+<body>
    <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;?>
  <body>
  	<div><?php
