@@ -6,6 +6,6 @@
     <div><a>
     	<br />tel:3630<br />
     	<br />email: LeBonFoin@caramail.fr<br />
-    	<br />fax: 0217211111
+    	<br />fax: 02.17.21.11.11
     </a></div>
 </footer>
