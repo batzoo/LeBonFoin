@@ -7,11 +7,16 @@
         </div>
     </section>
     <section>
-<?php 
-$pseudoCo=$_SESSION['pseudo'];
-?>
 
-<div class='titre'>
+<?php if(empty($_SESSION['pseudo'])==true){
+    $pseudoCo = 'et bienvenue !';
+}
+    else{
+    $pseudoCo=$_SESSION['pseudo'];
+    }?>
+
+
+<div class='titre'>  
     <h1>Bonjour <?php echo ($pseudoCo) ?> </h1></div>
     <h1>Bienvenue sur LeBonFoin.fr</h1></div>
 <div class='soustitre'>
