@@ -6,8 +6,6 @@
 
 <?php
 session_start();
-include 'header.php';
-//TODO include checkUser.php file
 ?>
 
      <?php
@@ -15,15 +13,21 @@ include 'header.php';
 ?>
 
 <?php
-	if(isset($_GET['page'])){
-	$page=$_GET['page'];
-	include $page.'.php';}
-	else{
-		die;
-	}
-//TODO get page parameter ($_GET['page'] or $_POST['page']) and assign it into $page variable
+	if(!empty($_GET['page'])){
+		$page=$_GET['page'];
+		
+		if (file_exists('actions/'.$page.'.php')){
 
-//if 'action/'.$page'.php' exists then include it (use file_exists($filename) function)
+			include('actions/'.$page.'.php');
+		}
+		elseif(file_exists('view/'.$page.'.php')){
+			include 'header.php';
+			include('view/'.$page.'.php');
+		}
+		else{
+		header('location: index.php?page=accueil');
+	}
+	}
 
 
 //create one php file for each action to manage on the website

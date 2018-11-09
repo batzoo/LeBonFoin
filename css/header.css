@@ -45,3 +45,10 @@ html
 .menuCategory:hover .withSeveralLinks {
     display: block;
 }
+
+.connexion
+{
+position: relative;
+top: -56px; left : 50px; 
+text-align: right;
+}
