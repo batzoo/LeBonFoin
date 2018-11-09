@@ -19,11 +19,7 @@
 		    	<span class="navtitle"><a href="index.php?page=Produits">Product</a></span>
 		    	
 			</div>
-<<<<<<< HEAD
-			<div class="menuCategory"><a href="ShoppingCart.php">Cart</a> </div>
-=======
 			<div class="menuCategory"><a href="index.php?page=ShoppingCart">Panier</a> </div>
->>>>>>> dfd500dbe9787cb44b5989fc947abdba7484ee6b
 
 			<div class="menuCategory">
 			    <a href="index.php?page=ContactUs">Contact us</a>
