@@ -25,16 +25,16 @@
 
 		<nav>
 			<div id="Menus">
-			<div class="menuCategory"><a href="index.php?page=CreateAccountPage">Create Account</a> </div>
+			<div class="menuCategory"><a href="index.php?page=createAccount">Create Account</a> </div>
 			<div class="menuCategory">
-			    <a href="index.php?page=Search">Search</a>
+			    <a href="index.php?page=search">Search</a>
 			</div>
 			<div class="menuCategory">
 				
-		    	<span class="navtitle"><a href="index.php?page=Produits">Product</a></span>
+		    	<span class="navtitle"><a href="index.php?page=produits2">Product</a></span>
 		    	
 			</div>
-			<div class="menuCategory"><a href="index.php?page=ShoppingCart">Panier</a> </div>
+			<div class="menuCategory"><a href="index.php?page=panier">Panier</a> </div>
 
 			<div class="menuCategory">
 			    <a href="index.php?page=ContactUs">Contact us</a>
