@@ -1,6 +1,3 @@
-<?php
-session_start()
-?>
 <body><?php include "header.php";?>
    <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;?>
  <body>

@@ -1,60 +1,60 @@
-<?php
-session_start()
-?>
 <!DOCTYPE html>
 <html>
+
+<!-- ================================== -->
+
 <head>
     <link rel="stylesheet" href="css/Produits.css" />
-
-    
 </head>
+
+<!-- ================================== -->
+
  <?php include "header.php";?>
+ 
+<!-- ================================== -->
+
 <body>
-     <STYLE>A {text-decoration: none;} </STYLE>
+    <STYLE>A {text-decoration: none;} </STYLE>
     <section>
+        
+        <?php
+        //chargement d'un tableau $products contenant nom,desc et prix de tous les produits de la BDD
+        $reponse = $bdd->query('SELECT name,description,unit_price,id FROM products');
+        $products= array();
+        $i=0;$count=0;$productPerLine=3;
+        ?>
+
         <div id="conteneur">
-        <div class="element">
-            <a href="foin.php">
-            <p><img src="Images/foin.jpg" width="210"> </p>
-            <p id="texte"><?php $reponse=$bdd->query('SELECT name FROM products WHERE id="1"');
-                $nom=$reponse->fetch();
-            echo($nom['name']);?>
-            <br/>
-            </p>
-    	</a></div>
-        	
-         <div class="element">
-            <p><img src="Images/Moisonneuse.jpg"width="250"></p>
-            <p id="texte"><?php $reponse=$bdd->query('SELECT name,unit_price FROM products WHERE id="2"');
-                $nom=$reponse->fetch();
-            echo($nom['name']);?>
-            <br/>
-            <?php
-            echo 'Prix : ', $nom['unit_price'], ' €';
+
+        <?php
+        while ($donnees = $reponse->fetch()){
+            if ($count % $productPerLine == 0){
+                $count = 0;
+                ?> </div> <div id="conteneur"> <?php
+            }
+
             ?>
-            <form>
-            <input id="addbutton" type="button" name="add" onclick="">
+                <div id="block">
+                    <a href="ProductPage.php?productid=<?php echo $donnees["id"]?>">    
+                        <img id=productImg src="Images/images_produit/<?php echo $donnees["name"]?>.png">
+                        <p><big><?php echo $donnees["name"]?></big> </p>
+                        <p>Price : <?php echo $donnees["unit_price"]?> €/Kg</p>
+                    </a>
+                </div>
+        <?php  
+        $count = $count + 1;  
+        }?>
 
-            </form>
-
-
-            </form>
-        </p>
         </div>
+            
 
-    		 
-    	<div class="element">
-            <p><img  src="Images/Mangeoire.jpg" width="200"></p>
-            <p id="texte"><?php $reponse=$bdd->query('SELECT name,unit_price FROM products WHERE id="3"');
-                $nom=$reponse->fetch();
-            echo($nom['name']);?>
-            <br/>
-            <?php
-            echo 'Prix : ', $nom['unit_price'], ' €';
-            ?></p>
-        </div>
-    </div> 
-</section>
-    <?php include "footer.php";?>
+    </section>
+    
 </body>  
+
+<!-- ================================== -->
+
+<?php include "footer.php";?>
+
+<!-- ================================== -->
 </html>

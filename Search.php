@@ -1,8 +1,4 @@
-<?php
-session_start()
-?>
 <body>
-	<?php include "header.php";?>
 	<p><br/></p>
 	<form action='SearchResult.php' method='POST'>
 	<label for="recherche">Rechercher : </label><input type="text" name="recherche" />
