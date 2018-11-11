@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 
+
+
+<?php
+// Sous WAMP (Windows)
+$bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '');
+?>
+
 <?php 
 if (isset($_GET['productid'])){
     $productid= $_GET['productid'];
 } else {
-    include 'index.php?page=produits2';
+    include 'index.php?page=Produits';
     die;
 } 
 $verif=FALSE;
@@ -27,6 +34,13 @@ $productprice=$donnees['unit_price'];
 endif
 ?>
 <!--HEAD SECTION-->
+<head>
+    <title>LeBonFoin.fr</title> 
+    <link rel="stylesheet" href="css/ProductPage.css" />
+    <link rel="stylesheet" href="css/Header.css" />
+    
+</head>
+
 <!--BODY SECTION-->
 <body>
 	<section id="conteneur">
@@ -57,14 +71,14 @@ endif
 							echo"Quantité invalide";
 						}
 					    else{
-					    	echo $_POST['quantity'];
-					     	echo " kg de "; 
-					     	echo $productname;
-					     	echo " ajoutés au panier !";
+					     	$order_cart_id_ = $bdd->prepare("SELECT id FROM orders WHERE user_id=:usrid AND type='CART' ");
+					     	$order_cart_id_ -> execute(array('usrid'=>$_SESSION['id']));
+					     	if($data = $order_cart_id_ -> fetch()){
+					     		echo $data;
+					     		$order_cart_id = $data[0];
+					     	}
 
-					     	$user_id = $bdd->query('SELECT id FROM users WHERE username=$_SESSION["pseudo"] AND password=$_SESSION["mdp"] ');
-
-					     	$order_cart_id = $bdd->query('SELECT id FROM orders WHERE user_id=$user_id AND type="CART"' );
+					     	echo $order_cart_id;
 
 					     	$write=$bdd->prepare('  INSERT INTO order_products(order_id, product_id, quantity, unit_price) VALUES (:orid,:prid,:qtt,:unpr)  ');
 					     	$write -> execute(array(

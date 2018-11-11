@@ -5,7 +5,6 @@
 <head>
     <title>LeBonFoin.fr</title> 
     <link rel="stylesheet" href="css/Produits.css" />
-    <link rel="stylesheet" href="css/Header.css" />
 </head>
 
 <!--BODY SECTION-->
@@ -15,7 +14,7 @@
         <div id="conteneur">
 
         <!--on regarde s'il y a une commande du produit 1-->
-        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price FROM order_products WHERE product_id="1"');
+        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price, id FROM order_products WHERE product_id="1"');
                  $prix1=$reponse->fetch(); 
 
         if($prix1['quantity']!=0):?>
@@ -30,10 +29,11 @@
                 </div>
                 <br/>
                 <div class="recapCommande">
-                <?php                
+                <?php
+                $idx=$prix1['id'];                
                 echo 'Quantité : ',$prix1['quantity'],' Prix unitaire: ',$prix1['unit_price'],' €';?>
                 <form action='index.php?page=deleteOrder' method='POST'>
-                     <input hidden name='delete' value= "$prix1['id']"/>
+                     <input hidden name='delete' value = '".$prix1['id']."'/>
                     <label>    </label><input type="submit" value="Supprimer">
                 </div>
                 <br/>
@@ -167,5 +167,6 @@
     </div>
      
     </section>
+    <?php include "footer.php";?>
 </body>  
 </html>
