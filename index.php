@@ -3,7 +3,6 @@
 <?php  $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;
 //TODO assign database connexion into $database variable
 session_start();
-include 'header.php';
 ?>
 
 <?php
@@ -17,9 +16,15 @@ include 'header.php';
 <?php
 	if(!empty($_GET['page'])){
 		$page=$_GET['page'];
-		
-		include $page.'.php';	
-}
+		if (file_exists('action/'.$page.'.php')){
+
+		include('action/'.$page.'.php');
+		}
+		elseif(file_exists('view/'.$page.'.php')){
+			include 'header.php';
+			include 'view/'.$page.'.php';
+		}
+	}
 
 //create one php file for each action to manage on the website
 

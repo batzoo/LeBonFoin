@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="css/contactUs.css" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-
-</head>
 <body>  
     <section>
     	<div class=Contact>
@@ -24,6 +18,5 @@
     	<h1>par fax au 0217211111</h1>
      </div>
      </section>
-    <?php include "footer.php";?>
 </body>
 </html>

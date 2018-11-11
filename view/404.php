@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+<!--HEAD SECTION-->
 
-<!--BODY SECTION-->
-<body>
     <!--MAIN CONTENT-->
     <section>
         <h1>OUPSI,la page demandée n'existe pas.<h/1>

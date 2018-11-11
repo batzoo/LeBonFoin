@@ -1,8 +1,6 @@
 
 
-   <link rel ="stylesheet" href="css/format.css" />
-    <link rel ="stylesheet" href="css/main.css" />
-   <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;?>
+   
  <body>
  
 	<div class='titre'>
@@ -39,7 +37,7 @@
             else:
               echo('connexion validée, cliquez ci-dessous');
               ?>
-              <form action="index.php?page=Acceuil" method="POST">
+              <form action="index.php?page=accueil" method="POST">
                     <label>    </label><input type='submit' >
           </form> 
            <?php endif

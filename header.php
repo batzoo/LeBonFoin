@@ -10,7 +10,7 @@
 <header>
 <div id="Menus">
 <!--<div class="title">  </div>-->
-<div class="connect"><a id="headertitle" href="index.php?page=Acceuil">LeBonFoin.fr</a></div>	
+<div class="connect"><a id="headertitle" href="index.php?page=accueil">LeBonFoin.fr</a></div>	
 
 	<?php 
 	if(empty($_SESSION['pseudo'])==true){ ?>
@@ -31,7 +31,7 @@
 		<?php	echo 'Deconnexion :';
 		?>
 		</br>
-		<form action="index.php" method="POST">
+		<form action="index.php?page=accueil" method="POST">
         <input type='submit' name='deconnexion' ></form>
 	</div>
 </div>
@@ -58,7 +58,7 @@
 			<div class="menuCategory"><a href="index.php?page=panier">Panier</a> </div>
 
 			<div class="menuCategory">
-			    <a href="index.php?page=ContactUs">Contact us</a>
+			    <a href="index.php?page=contact">Contact us</a>
 			</div>
 		</div>
 		</nav>

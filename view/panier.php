@@ -5,6 +5,7 @@
 <head>
     <title>LeBonFoin.fr</title> 
     <link rel="stylesheet" href="css/Produits.css" />
+    <link rel="stylesheet" href="css/Header.css" />
 </head>
 
 <!--BODY SECTION-->
@@ -27,7 +28,7 @@
                     $total=0;
                 echo $nom1['name'];?>
                 </div>
-            
+                <br/>
                 <div class="recapCommande">
                 <?php                
                 echo 'Quantité : ',$prix1['quantity'],' Prix unitaire: ',$prix1['unit_price'],' €';?>
@@ -53,7 +54,7 @@
                     $nom2=$reponse2->fetch();
                 echo $nom2['name']; ?>
                 </div>
-                
+                <br/>
                  <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix2['quantity'],' Prix unitaire: ',$prix2['unit_price'],' €';?>
                 </div>
@@ -75,7 +76,7 @@
                     $reponse2=$bdd->query('SELECT name FROM products WHERE id="3"');
                     $nom3=$reponse2->fetch();
                 echo $nom3['name']; ?>
-                
+                <br/>
                 <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix3['quantity'],' Prix unitaire: ',$prix3['unit_price'],' €';?>
                 </div>
@@ -97,7 +98,7 @@
                     $reponse2=$bdd->query('SELECT name FROM products WHERE id="4"');
                     $nom4=$reponse2->fetch();
                 echo $nom4['name']; ?>
-                
+                <br/>
                 <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix4['quantity'],' Prix unitaire: ',$prix4['unit_price'],' €';?>
                 </div>
@@ -119,7 +120,7 @@
                     $reponse2=$bdd->query('SELECT name FROM products WHERE id="5"');
                     $nom5=$reponse2->fetch();
                 echo $nom4['name']; ?>
-                
+                <br/>
                 <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix5['quantity'],' Prix unitaire: ',$prix5['unit_price'],' €';?>
                 </div>
@@ -141,7 +142,7 @@
                     $reponse2=$bdd->query('SELECT name FROM products WHERE id="6"');
                     $nom6=$reponse2->fetch();
                 echo $nom6['name']; ?>
-                
+                <br/>
                 <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix6['quantity'],' Prix unitaire: ',$prix6['unit_price'],' €';?>
                 </div>
@@ -166,6 +167,5 @@
     </div>
      
     </section>
-    <?php include "footer.php";?>
 </body>  
 </html>

@@ -1,17 +1,22 @@
 <body>
-	<link rel="stylesheet" href="css/Produits.css" />
-	<section>
-			<center>
-        	<img id="welcomeMainImage" src="Images/logo.jpg" width='350' height='250'>
-        	</center>
+    <link rel="stylesheet" href="css/Produits.css" />
+    <section>
+            <center>
+            <img id="welcomeMainImage" src="Images/logo.jpg" width='350' height='250'>
+            </center>
         </div>
     </section>
     <section>
-<?php 
-$pseudoCo=$_SESSION['pseudo'];
-?>
 
-<div class='titre'>
+<?php if(empty($_SESSION['pseudo'])==true){
+    $pseudoCo = 'et bienvenue !';
+}
+    else{
+    $pseudoCo=$_SESSION['pseudo'];
+    }?>
+
+
+<div class='titre'>  
     <h1>Bonjour <?php echo ($pseudoCo) ?> </h1></div>
     <h1>Bienvenue sur LeBonFoin.fr</h1></div>
 <div class='soustitre'>
