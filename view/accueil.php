@@ -1,5 +1,4 @@
 <body>
-    <link rel="stylesheet" href="css/Produits.css" />
     <section>
             <center>
             <img id="welcomeMainImage" src="Images/logo.jpg" width='350' height='250'>

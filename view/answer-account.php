@@ -1,7 +1,5 @@
 <body>
      
-    <link rel ="stylesheet" href="css/format.css" />
-    <link rel ="stylesheet" href="css/main.css" />
     <section>
        <div href="main.html">
             <center>
@@ -55,5 +53,4 @@
     
 ?>
     </section>
-    <?php include "footer.php";?>
 </body>

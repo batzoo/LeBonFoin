@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!--HEAD SECTION-->
-<head>
-    <title>LeBonFoin.fr</title> 
-    <link rel="stylesheet" href="css/Produits.css" />
-</head>
-
 <!--BODY SECTION-->
 <body>
      <STYLE>A {text-decoration: none;} </STYLE>
@@ -167,6 +161,5 @@
     </div>
      
     </section>
-    <?php include "footer.php";?>
 </body>  
 </html>

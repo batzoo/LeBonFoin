@@ -3,16 +3,11 @@
 
 
 
-<?php
-// Sous WAMP (Windows)
-$bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '');
-?>
-
 <?php 
 if (isset($_GET['productid'])){
     $productid= $_GET['productid'];
 } else {
-    include 'index.php?page=Produits';
+    include 'index.php?page=produits2';
     die;
 } 
 $verif=FALSE;
@@ -33,15 +28,6 @@ $productprice=$donnees['unit_price'];
 
 endif
 ?>
-<!--HEAD SECTION-->
-<head>
-    <title>LeBonFoin.fr</title> 
-    <link rel="stylesheet" href="css/ProductPage.css" />
-    <link rel="stylesheet" href="css/Header.css" />
-    
-</head>
-
-<!--BODY SECTION-->
 <body>
 	<section id="conteneur">
 		<div id="element">

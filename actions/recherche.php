@@ -1,6 +1,4 @@
 <body>
-   <?php $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;?>
- <body>
  	<div><?php
  		$recherche = $_POST["recherche"];
 		$reponse=$bdd->prepare('SELECT name,unit_price,description FROM products WHERE name=:recherche');
