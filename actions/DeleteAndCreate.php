@@ -1,7 +1,7 @@
 
 <?php 
 
-	$id=$_SESSION['ID'];
+	$id=$_SESSION['id'];
 
 	$reponse = $bdd->prepare('SELECT id FROM orders WHERE user_id=:id AND status="CART"');
 			$reponse->bindParam(':id',$id);
