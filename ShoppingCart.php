@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 
+<!--HEAD SECTION-->
+<head>
+    <title>LeBonFoin.fr</title> 
+    <link rel="stylesheet" href="css/Produits.css" />
+</head>
+
 <!--BODY SECTION-->
 <body>
      <STYLE>A {text-decoration: none;} </STYLE>
@@ -12,7 +18,7 @@
                  $prix1=$reponse->fetch(); 
 
         if($prix1['quantity']!=0):?>
-                <div class="element">
+        		<div class="element">
                 <p><img id="cart" src="Images/foin_prairie.jpg" width="210"> </p>
                 <div class="recapCommande">
                     <?php
@@ -20,19 +26,15 @@
                     $nom1=$reponse2->fetch();
                     $total=0;
                 echo $nom1['name'];?>
-                </div>
+            	</div>
                 <br/>
                 <div class="recapCommande">
                 <?php
                 $idx=$prix1['id'];                
                 echo 'Quantité : ',$prix1['quantity'],' Prix unitaire: ',$prix1['unit_price'],' €';?>
                 <form action='index.php?page=deleteOrder' method='POST'>
-<<<<<<< HEAD
-                    <input hidden name='delete' value= "$prix1['id']"/>
-=======
-                     <input hidden name='delete' value = '".$prix1['id']."'/>
->>>>>>> 92da333846694ff98403636cd1727216ec5e1009
-                    <label>    </label><input type="submit" value="Supprimer">
+                	 <input hidden name='delete' value = '".$prix1['id']."'/>
+                <label>    </label><input type="submit" value="Supprimer">
                 </div>
                 <br/>
                 </p>
@@ -44,7 +46,7 @@
                  $prix2=$reponse->fetch(); 
 
         if($prix2['quantity']!=0):?>
-                <div class="element">
+        		<div class="element">
                 <p><img id="cart" src="Images/foin_prairie.jpg" width="210"></p>
                 <div class="recapCommande">
                     <?php 
@@ -151,8 +153,8 @@
 
         <!--calcul du cout total du panier-->
         <div class="LastElement">
-            <div class="prixCommande">
-            <p>
+        	<div class="prixCommande">
+        	<p>
             <?php 
             $total = $n=$prix1['quantity']*$prix1['unit_price']+$prix2['quantity']*$prix2['unit_price']+$prix3['quantity']*$prix3['unit_price']+$prix4['quantity']*$prix4['unit_price']+$prix5['quantity']*$prix5['unit_price']+$prix6['quantity']*$prix6['unit_price'];
             echo 'COUT TOTAL: ';?>
@@ -165,5 +167,6 @@
     </div>
      
     </section>
+    <?php include "footer.php";?>
 </body>  
 </html>
