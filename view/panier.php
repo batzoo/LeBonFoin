@@ -6,14 +6,23 @@
      <STYLE>A {text-decoration: none;} </STYLE>
     <section>
         <div id="conteneur">
-
+        
+        
         <!--on regarde s'il y a une commande du produit 1-->
-        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price, id FROM order_products WHERE product_id="1"');
+<?<?php     $id=$_SESSION['id'];
+            $GoodOrder=$bdd->prepare('SELECT id FROM orders WHERE user_id=:id AND status="CART"');
+                $GoodOrder->bindParam(':id',$id);
+                $GoodOrder->execute();
+                $order=$GoodOrder->fetch();
+
+            $reponse=$bdd->prepare('SELECT quantity,unit_price, id FROM order_products WHERE product_id="1"AND order_id=:id ');
+                $reponse->bindParam(':id',$order[0]);
+                $reponse->execute();
                  $prix1=$reponse->fetch(); 
 
         if($prix1['quantity']!=0):?>
                 <div class="element">
-                <p><img id="cart" src="Images/foin_prairie.jpg" width="210"> </p>
+                <img id="cart" src="Images/foin_prairie.jpg" width="210"> </p>
                 <div class="recapCommande">
                     <?php
                     $reponse2=$bdd->query('SELECT name FROM products WHERE id="1"');
@@ -26,14 +35,6 @@
                 <?php            
                 echo 'Quantité : ',$prix1['quantity'],' Prix unitaire: ',$prix1['unit_price'],' €';?>
 
-                <form action='index.php?page=deleteOrder' method='POST'>
-
-                    <input hidden name='delete' value= "$prix1['id']"/>
-
-                     <input hidden name='delete' value = '".$prix1['id']."'/>
-
-                    <label>    </label><input type="submit" value="Supprimer">
-
                 </div>
                 <br/>
                 </p>
@@ -41,7 +42,9 @@
         <?php endif?>
 
         <!--on regarde s'il y a une commande du produit 2-->
-        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price FROM order_products WHERE product_id="2"');
+        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="2"AND order_id=:id');
+                 $reponse->bindParam(':id',$order[0]);
+                 $reponse->execute();
                  $prix2=$reponse->fetch(); 
 
         if($prix2['quantity']!=0):?>
@@ -64,7 +67,9 @@
          
          <!--on regarde s'il y a une commande du produit 3-->    
 
-        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price FROM order_products WHERE product_id="3"');
+        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="3"AND order_id=:id');
+                 $reponse->bindParam(':id',$order[0]);
+                 $reponse->execute();
         $prix3=$reponse->fetch(); 
 
         if($prix3['quantity']!=0):?>
@@ -86,8 +91,10 @@
          
         <!--on regarde s'il y a une commande du produit 4-->    
 
-        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price FROM order_products WHERE product_id="4"');
-        $prix4=$reponse->fetch(); 
+        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="4"AND order_id=:id');
+                $reponse->bindParam(':id',$order[0]);
+                $reponse->execute();
+                $prix4=$reponse->fetch(); 
 
         if($prix4['quantity']!=0):?>
             <div class="element">
@@ -108,7 +115,9 @@
 
         <!--on regarde s'il y a une commande du produit 5-->    
 
-        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price FROM order_products WHERE product_id="5"');
+        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="5"AND order_id=:id');
+                $reponse->bindParam(':id',$order[0]);
+                $reponse->execute();        
         $prix5=$reponse->fetch(); 
 
         if($prix5['quantity']!=0):?>
@@ -130,7 +139,9 @@
 
         <!--on regarde s'il y a une commande du produit 6-->    
 
-        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price FROM order_products WHERE product_id="6"');
+        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="6"AND order_id=:id');
+                $reponse->bindParam(':id',$order[0]);
+                $reponse->execute();        
         $prix6=$reponse->fetch(); 
 
         if($prix6['quantity']!=0):?>
