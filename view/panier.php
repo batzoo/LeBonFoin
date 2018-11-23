@@ -76,13 +76,12 @@
             <div class="element">
                 <p><img id="cart" src="Images/foin_prairie.jpg" width="210"></p>
                 <div class="recapCommande">
-                <?php 
-                    $reponse2=$bdd->query('SELECT name FROM products WHERE id="3"');
-                    $nom3=$reponse2->fetch();
-                echo $nom3['name']; ?>
-                <br/>
-                <div class="recapCommande">
-                <?php echo 'Quantité: ',$prix3['quantity'],' Prix unitaire: ',$prix3['unit_price'],' €';?>
+                    <?php 
+                        $reponse2=$bdd->query('SELECT name FROM products WHERE id="3"');
+                        $nom3=$reponse2->fetch();
+                    echo $nom3['name']; ?>
+                    <br/>
+                        <?php echo 'Quantité: ',$prix3['quantity'],' Prix unitaire: ',$prix3['unit_price'],' €';?>
                 </div>
                 <br/>
                 </p>
@@ -100,13 +99,12 @@
             <div class="element">
                 <p><img id="cart" src="Images/Mangeoire.jpg" width="210"></p>
                 <div class="recapCommande">
-                <?php 
-                    $reponse2=$bdd->query('SELECT name FROM products WHERE id="4"');
-                    $nom4=$reponse2->fetch();
-                echo $nom4['name']; ?>
-                <br/>
-                <div class="recapCommande">
-                <?php echo 'Quantité: ',$prix4['quantity'],' Prix unitaire: ',$prix4['unit_price'],' €';?>
+                    <?php 
+                        $reponse2=$bdd->query('SELECT name FROM products WHERE id="4"');
+                        $nom4=$reponse2->fetch();
+                    echo $nom4['name']; ?>
+                    <br/>
+                    <?php echo 'Quantité: ',$prix4['quantity'],' Prix unitaire: ',$prix4['unit_price'],' €';?>
                 </div>
                 <br/>
                 </p>
@@ -124,13 +122,12 @@
             <div class="element">
                 <p><img id="cart" src="Images/Mangeoire.jpg" width="210"></p>
                 <div class="recapCommande">
-                <?php 
-                    $reponse2=$bdd->query('SELECT name FROM products WHERE id="5"');
-                    $nom5=$reponse2->fetch();
-                echo $nom4['name']; ?>
-                <br/>
-                <div class="recapCommande">
-                <?php echo 'Quantité: ',$prix5['quantity'],' Prix unitaire: ',$prix5['unit_price'],' €';?>
+                    <?php 
+                        $reponse2=$bdd->query('SELECT name FROM products WHERE id="5"');
+                        $nom5=$reponse2->fetch();
+                    echo $nom4['name']; ?>
+                    <br/>
+                    <?php echo 'Quantité: ',$prix5['quantity'],' Prix unitaire: ',$prix5['unit_price'],' €';?>
                 </div>
                 <br/>
                 </p>
@@ -148,19 +145,18 @@
             <div class="element">
                 <p><img id="cart" src="Images/Mangeoire.jpg" width="210"></p>
                 <div class="recapCommande">
-                <?php 
-                    $reponse2=$bdd->query('SELECT name FROM products WHERE id="6"');
-                    $nom6=$reponse2->fetch();
-                echo $nom6['name']; ?>
-                <br/>
-                <div class="recapCommande">
-                <?php echo 'Quantité: ',$prix6['quantity'],' Prix unitaire: ',$prix6['unit_price'],' €';?>
+                    <?php 
+                        $reponse2=$bdd->query('SELECT name FROM products WHERE id="6"');
+                        $nom6=$reponse2->fetch();
+                    echo $nom6['name']; ?>
+                    <br/>
+                    <?php echo 'Quantité: ',$prix6['quantity'],' Prix unitaire: ',$prix6['unit_price'],' €';?>
                 </div>
                 <br/>
                 </p>
             </div>
         <?php endif ?>
-
+    </div>
         <!--calcul du cout total du panier-->
         <div class="LastElement">
             <div class="prixCommande">
