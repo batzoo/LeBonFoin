@@ -51,7 +51,7 @@ endif
 
     		</form>
     		<?php
-    			if( isset( $_SESSION )){
+    			if( !empty($_SESSION['pseudo']) ){
 					if( isset($_POST['quantity']) ){
 						if($_POST['quantity']<=0){
 							echo"Quantité invalide";
@@ -59,12 +59,11 @@ endif
 					    else{
 					     	$order_cart_id_ = $bdd->prepare("SELECT id FROM orders WHERE user_id=:usrid AND type='CART' ");
 					     	$order_cart_id_ -> execute(array('usrid'=>$_SESSION['id']));
+
 					     	if($data = $order_cart_id_ -> fetch()){
-					     		echo $data;
+					     		
 					     		$order_cart_id = $data[0];
 					     	}
-
-					     	echo $order_cart_id;
 
 					     	$write=$bdd->prepare('  INSERT INTO order_products(order_id, product_id, quantity, unit_price) VALUES (:orid,:prid,:qtt,:unpr)  ');
 					     	$write -> execute(array(
@@ -76,6 +75,9 @@ endif
 					    }
 					    
 					}
+				}
+				else{
+					echo 'Vous n\'etes pas connecté !';
 				}
 
     		?>

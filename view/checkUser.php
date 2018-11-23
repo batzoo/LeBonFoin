@@ -10,6 +10,16 @@
   if (empty($_POST["pseudoConnexion"])==FALSE):{
     $_SESSION['pseudo']=$_POST["pseudoConnexion"]; 
     $_SESSION['mdp']=$_POST['mdpConnexion'];
+
+    $user_id_ = $bdd->prepare('SELECT id FROM users WHERE username=:usrnm AND password=:pswrd ');
+    $user_id_ -> execute(array(
+      'usrnm' => $_POST["pseudoConnexion"],
+      'pswrd' => $_POST["mdpConnexion"]
+    ));
+    if($data = $user_id_ -> fetch()){
+      $_SESSION['id'] = $data[0];
+    }
+
     $controlUser = $_SESSION['pseudo'];
     $controlMdp = $_SESSION['mdp'];
 

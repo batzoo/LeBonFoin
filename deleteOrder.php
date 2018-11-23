@@ -12,7 +12,13 @@
 
     <section>
 
-    <?php
-        $requete=$bdd->prepare('DELETE FROM order_products WHERE id=:id')
-        $requete->bindParam('id',$_POST['id']);
+    <?php    
+        var_dump($_POST['delete']) ;                                                        
+        $requete=$bdd->prepare('DELETE FROM order_products WHERE id=:id');
+        $requete->bindParam('id',$_POST['delete']);
+         
+        $requete->execute();
+
         ?>
+    </section>
+</body>

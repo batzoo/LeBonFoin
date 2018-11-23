@@ -28,18 +28,19 @@
           'mdp' => $_POST["mdp1"],
           'email' => $_POST["email"]));
 
+
+          //récupération de l'user ID
           $user_id_ = $bdd->prepare('SELECT id FROM users WHERE username=:usrnm AND password=:pswrd ');
           $user_id_ -> execute(array(
-            'usrnm' => $_SESSION["pseudo"],
-            'pswrd' => $_SESSION["mdp"]
+            'usrnm' => $_POST["pseudo"],
+            'pswrd' => $_POST["mdp1"]
           ));
           if($data = $user_id_ -> fetch()){
             $user_id = $data[0];
           }
 
-          
-
-          $write = $bdd -> prepare ('INSERT INTO orders(user_id,type,status,amount,billing_adress_id,delivery_adress_id) VALUES (:usrid,CART,CART,0,NULL,NULL)');
+          //création d'un panier
+          $write = $bdd -> prepare ('INSERT INTO orders(user_id,type,status,amount,billing_adress_id,delivery_adress_id) VALUES (:usrid,"CART","CART","0",NULL,NULL)');
           $write -> execute(array(
             'usrid' => $user_id
           ));
