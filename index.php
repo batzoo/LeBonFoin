@@ -1,24 +1,28 @@
 
 
-<?php  $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;
-//TODO assign database connexion into $database variable
+<?php  
 session_start();
+include "database.php";
 ?>
 
 
 
 <?php
-	if(!empty($_GET['page'])){
-		$page=$_GET['page'];
-		include 'header.php';
-		if (file_exists('actions/'.$page.'.php')){
-
-		include('actions/'.$page.'.php');
+$page='accueil'; // default value
+if (isset($_GET['page'])){
+	$page=$_GET['page'];
+} 
+else if(isset($_POST['page'])){
+	$page=$_POST['page'];
+}
+include 'header.php';
+if (file_exists('actions/'.$page.'.php')){
+	include('actions/'.$page.'.php');
 		}
-		elseif(file_exists('view/'.$page.'.php')){
+	elseif(file_exists('view/'.$page.'.php')){
 			include 'view/'.$page.'.php';
 		}
-	}
+	
 
 //create one php file for each action to manage on the website
 

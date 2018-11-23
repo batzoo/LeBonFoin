@@ -23,9 +23,9 @@
                 </div>
                 <br/>
                 <div class="recapCommande">
-                <?php
-                $idx=$prix1['id'];                
+                <?php            
                 echo 'Quantité : ',$prix1['quantity'],' Prix unitaire: ',$prix1['unit_price'],' €';?>
+<<<<<<< HEAD
                 <form action='index.php?page=deleteOrder' method='POST'>
 
                     <input hidden name='delete' value= "$prix1['id']"/>
@@ -33,6 +33,8 @@
                      <input hidden name='delete' value = '".$prix1['id']."'/>
 
                     <label>    </label><input type="submit" value="Supprimer">
+=======
+>>>>>>> 229cd0f0e26869aeb1243e39eecfbeaece0fea1a
                 </div>
                 <br/>
                 </p>
