@@ -70,8 +70,6 @@ endif
 					     	$data = $product_qtt_ -> fetch();
 					     	$product_qtt = $data[0];
 					     	
-
-					     	
 				     		if(isset($product_qtt)){
 				     			$totalqtt = $product_qtt + $_POST['quantity'];
 				     			//UPDATE MyGuests SET lastname='Doe' WHERE id=2
