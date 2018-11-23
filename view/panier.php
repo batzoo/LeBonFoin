@@ -32,7 +32,7 @@
                 <?php                
                 echo 'Quantité : ',$prix1['quantity'],' Prix unitaire: ',$prix1['unit_price'],' €';?>
                 <form action='index.php?page=deleteOrder' method='POST'>
-                     <input hidden name='delete' value= "$prix1['id']"/>
+                    <input hidden name='delete' value= "$prix1['id']"/>
                     <label>    </label><input type="submit" value="Supprimer">
                 </div>
                 <br/>
