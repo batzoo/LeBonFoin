@@ -1,7 +1,5 @@
 <body>
      
-    <link rel ="stylesheet" href="css/format.css" />
-    <link rel ="stylesheet" href="css/main.css" />
     <section>
        <div href="main.html">
             <center>
@@ -30,7 +28,14 @@
           'mdp' => $_POST["mdp1"],
           'email' => $_POST["email"]));
 
-
+          $user_id_ = $bdd->prepare('SELECT id FROM users WHERE username=:usrnm AND password=:pswrd ');
+          $user_id_ -> execute(array(
+            'usrnm' => $_SESSION["pseudo"],
+            'pswrd' => $_SESSION["mdp"]
+          ));
+          if($data = $user_id_ -> fetch()){
+            $user_id = $data[0];
+          }
 
           
 
@@ -48,5 +53,4 @@
     
 ?>
     </section>
-    <?php include "footer.php";?>
 </body>

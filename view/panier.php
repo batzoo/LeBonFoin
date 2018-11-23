@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!--HEAD SECTION-->
-<head>
-    <title>LeBonFoin.fr</title> 
-    <link rel="stylesheet" href="css/Produits.css" />
-</head>
-
 <!--BODY SECTION-->
 <body>
      <STYLE>A {text-decoration: none;} </STYLE>
@@ -14,7 +8,7 @@
         <div id="conteneur">
 
         <!--on regarde s'il y a une commande du produit 1-->
-        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price FROM order_products WHERE product_id="1"');
+        <p><?php $reponse=$bdd->query('SELECT quantity,unit_price, id FROM order_products WHERE product_id="1"');
                  $prix1=$reponse->fetch(); 
 
         if($prix1['quantity']!=0):?>
@@ -27,12 +21,17 @@
                     $total=0;
                 echo $nom1['name'];?>
                 </div>
-            
+                <br/>
                 <div class="recapCommande">
-                <?php                
+                <?php
+                $idx=$prix1['id'];                
                 echo 'Quantité : ',$prix1['quantity'],' Prix unitaire: ',$prix1['unit_price'],' €';?>
                 <form action='index.php?page=deleteOrder' method='POST'>
+<<<<<<< HEAD
                     <input hidden name='delete' value= "$prix1['id']"/>
+=======
+                     <input hidden name='delete' value = '".$prix1['id']."'/>
+>>>>>>> 92da333846694ff98403636cd1727216ec5e1009
                     <label>    </label><input type="submit" value="Supprimer">
                 </div>
                 <br/>
@@ -53,7 +52,7 @@
                     $nom2=$reponse2->fetch();
                 echo $nom2['name']; ?>
                 </div>
-                
+                <br/>
                  <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix2['quantity'],' Prix unitaire: ',$prix2['unit_price'],' €';?>
                 </div>
@@ -75,7 +74,7 @@
                     $reponse2=$bdd->query('SELECT name FROM products WHERE id="3"');
                     $nom3=$reponse2->fetch();
                 echo $nom3['name']; ?>
-                
+                <br/>
                 <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix3['quantity'],' Prix unitaire: ',$prix3['unit_price'],' €';?>
                 </div>
@@ -97,7 +96,7 @@
                     $reponse2=$bdd->query('SELECT name FROM products WHERE id="4"');
                     $nom4=$reponse2->fetch();
                 echo $nom4['name']; ?>
-                
+                <br/>
                 <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix4['quantity'],' Prix unitaire: ',$prix4['unit_price'],' €';?>
                 </div>
@@ -119,7 +118,7 @@
                     $reponse2=$bdd->query('SELECT name FROM products WHERE id="5"');
                     $nom5=$reponse2->fetch();
                 echo $nom4['name']; ?>
-                
+                <br/>
                 <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix5['quantity'],' Prix unitaire: ',$prix5['unit_price'],' €';?>
                 </div>
@@ -141,7 +140,7 @@
                     $reponse2=$bdd->query('SELECT name FROM products WHERE id="6"');
                     $nom6=$reponse2->fetch();
                 echo $nom6['name']; ?>
-                
+                <br/>
                 <div class="recapCommande">
                 <?php echo 'Quantité: ',$prix6['quantity'],' Prix unitaire: ',$prix6['unit_price'],' €';?>
                 </div>
@@ -166,6 +165,5 @@
     </div>
      
     </section>
-    <?php include "footer.php";?>
 </body>  
 </html>

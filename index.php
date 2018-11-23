@@ -3,23 +3,22 @@
 <?php  $bdd = new PDO('mysql:host=localhost;dbname=LeBonFoin;charset=utf8', 'root', '') ;
 //TODO assign database connexion into $database variable
 session_start();
-include 'header.php';
 ?>
 
-<?php
 
-?>
-
-     <?php
-//TODO (in the next step) control user access
-?>
 
 <?php
 	if(!empty($_GET['page'])){
 		$page=$_GET['page'];
-		
-		include $page.'.php';	
-}
+		include 'header.php';
+		if (file_exists('actions/'.$page.'.php')){
+
+		include('actions/'.$page.'.php');
+		}
+		elseif(file_exists('view/'.$page.'.php')){
+			include 'view/'.$page.'.php';
+		}
+	}
 
 //create one php file for each action to manage on the website
 
