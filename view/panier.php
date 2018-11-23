@@ -27,11 +27,11 @@
                 $idx=$prix1['id'];                
                 echo 'Quantité : ',$prix1['quantity'],' Prix unitaire: ',$prix1['unit_price'],' €';?>
                 <form action='index.php?page=deleteOrder' method='POST'>
-<<<<<<< HEAD
+
                     <input hidden name='delete' value= "$prix1['id']"/>
-=======
+
                      <input hidden name='delete' value = '".$prix1['id']."'/>
->>>>>>> 92da333846694ff98403636cd1727216ec5e1009
+
                     <label>    </label><input type="submit" value="Supprimer">
                 </div>
                 <br/>
@@ -159,6 +159,11 @@
             <br/>
             <?php 
             echo $total,'€' ;?>
+
+        <br/>
+        <a href="index.php?page=DeleteAndCreate"><form><input type="button" value="Valider le panier" action='index.php?page=DeleteAndCreate'"/></form></a>
+        
+            
         </p>
         </div>
         </div>
