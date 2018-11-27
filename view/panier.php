@@ -44,15 +44,10 @@
                 <?php
 
             }
-            
-        }
-        else{
-            echo "Connectez-vous pour voir votre panier !";
-        }
+            ?>
 
-        ?>
-        <!--calcul du cout total du panier-->
-        <div class="LastElement">
+            <!--calcul du cout total du panier-->
+            <div class="LastElement">
             <div class="prixCommande">
             <p>
             <?php 
@@ -61,13 +56,22 @@
             <?php 
             echo $prix_total,'€' ;?>
 
-        <br/>
-        <a href="index.php?page=DeleteAndCreate"><form><input type="button" value="Valider le panier" action='index.php?page=DeleteAndCreate'"/></form></a>
-        
+            <br/>
+            <a href="index.php?page=DeleteAndCreate"><form><input type="button" value="Valider le panier" action='index.php?page=DeleteAndCreate'"/></form></a>
             
-        </p>
-        </div>
-        </div>
+                
+            </p>
+            </div>
+            </div>
+        <?php
+        }
+        else{
+            echo "Connectez-vous pour voir votre panier !";
+        }
+
+        ?>
+        
+        
     </div>
      
     </section>
