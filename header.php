@@ -26,7 +26,7 @@
 	else { ?>		
 		<div class="connect">
 		</br>
-		<?php echo 'Vous êtes connectés, ', $_SESSION['pseudo'];?>
+		<?php echo 'Vous êtes connecté, ', $_SESSION['pseudo'];?>
 		</br>
 		</br>
 		<form action="index.php?page=accueil" method="POST">
