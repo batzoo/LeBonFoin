@@ -57,15 +57,8 @@ endif
 							echo"Quantité invalide";
 						}
 					    else{
-					     	$order_cart_id_ = $bdd->prepare("SELECT id FROM orders WHERE user_id=:usrid AND type='CART' ");
-					     	$order_cart_id_ -> execute(array('usrid'=>$_SESSION['id']));
-
-					     	if($data = $order_cart_id_ -> fetch()){
-					     		$order_cart_id = $data[0];
-					     	}
-
 					     	$product_qtt_ = $bdd->prepare("SELECT quantity FROM order_products WHERE product_id=:prdid AND order_id=:ordid ");
-					     	$product_qtt_ -> execute(array('prdid'=>$productid,'ordid'=>$order_cart_id));
+					     	$product_qtt_ -> execute(array('prdid'=>$productid,'ordid'=>$_SESSION['idcart']));
 
 					     	$data = $product_qtt_ -> fetch();
 					     	$product_qtt = $data[0];
@@ -75,12 +68,12 @@ endif
 				     			//UPDATE MyGuests SET lastname='Doe' WHERE id=2
 				     			//$reponse = $bdd->query('SELECT name,description,unit_price,id FROM products');
 				     			$update = $bdd->prepare('UPDATE order_products SET quantity=:qtt WHERE product_id=:prdid AND order_id=:ordid');
-				     			$update -> execute(array('qtt'=>$totalqtt,'prdid'=>$productid,'ordid'=>$order_cart_id));
+				     			$update -> execute(array('qtt'=>$totalqtt,'prdid'=>$productid,'ordid'=>$_SESSION['idcart']));
 				     		}
 				     		else{
 				     			$write=$bdd->prepare('  INSERT INTO order_products(order_id, product_id, quantity, unit_price) VALUES (:orid,:prid,:qtt,:unpr)  ');
 						     	$write -> execute(array(
-						     		'orid' =>  $order_cart_id,
+						     		'orid' =>  $_SESSION['idcart'],
 						     		'prid' => $productid ,
 						     		'qtt' => $_POST['quantity'],
 						     		'unpr' => $productprice 

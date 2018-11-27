@@ -7,174 +7,71 @@
     <section>
         <div id="conteneur">
         
-        
-        <!--on regarde s'il y a une commande du produit 1-->
-<?<?php     $id=$_SESSION['id'];
-            $GoodOrder=$bdd->prepare('SELECT id FROM orders WHERE user_id=:id AND status="CART"');
-                $GoodOrder->bindParam(':id',$id);
-                $GoodOrder->execute();
-                $order=$GoodOrder->fetch();
+        <?php
+        //Si on est connecté
+        if( !empty($_SESSION['pseudo']) ){
 
-            $reponse=$bdd->prepare('SELECT quantity,unit_price, id FROM order_products WHERE product_id="1"AND order_id=:id ');
-                $reponse->bindParam(':id',$order[0]);
-                $reponse->execute();
-                 $prix1=$reponse->fetch(); 
+            $prix_total = 0;
 
-        if($prix1['quantity']!=0):?>
+            $produits_panier_ = $bdd->prepare("SELECT product_id,quantity,unit_price FROM order_products WHERE order_id=:ordid");
+            $produits_panier_ -> execute(array('ordid'=>$_SESSION['idcart']));
+
+            //on parcours la liste des produits du panier
+            while($data = $produits_panier_ -> fetch()){
+
+                //on récupère le nom du produit(on a déja prix et qtt)
+                $produit_ = $bdd -> prepare("SELECT name FROM products WHERE id=:prdid");
+                $produit_ -> execute(array('prdid'=>$data['product_id']));
+                $produit = $produit_ -> fetch();
+
+                ?>
                 <div class="element">
-                <img id="cart" src="Images/foin_prairie.jpg" width="210"> </p>
-                <div class="recapCommande">
-                    <?php
-                    $reponse2=$bdd->query('SELECT name FROM products WHERE id="1"');
-                    $nom1=$reponse2->fetch();
-                    $total=0;
-                echo $nom1['name'];?>
-                </div>
-                <br/>
-                <div class="recapCommande">
-                <?php            
-                echo 'Quantité : ',$prix1['quantity'],' Prix unitaire: ',$prix1['unit_price'],' €';?>
-
-                </div>
-                <br/>
-                </p>
-            </div>
-        <?php endif?>
-
-        <!--on regarde s'il y a une commande du produit 2-->
-        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="2"AND order_id=:id');
-                 $reponse->bindParam(':id',$order[0]);
-                 $reponse->execute();
-                 $prix2=$reponse->fetch(); 
-
-        if($prix2['quantity']!=0):?>
-                <div class="element">
-                <p><img id="cart" src="Images/foin_prairie.jpg" width="210"></p>
-                <div class="recapCommande">
-                    <?php 
-                    $reponse2=$bdd->query('SELECT name FROM products WHERE id="2"');
-                    $nom2=$reponse2->fetch();
-                echo $nom2['name']; ?>
-                </div>
-                <br/>
-                 <div class="recapCommande">
-                <?php echo 'Quantité: ',$prix2['quantity'],' Prix unitaire: ',$prix2['unit_price'],' €';?>
-                </div>
-                <br/>
-                </p>
-            </div>
-        <?php endif ?>
-         
-         <!--on regarde s'il y a une commande du produit 3-->    
-
-        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="3"AND order_id=:id');
-                 $reponse->bindParam(':id',$order[0]);
-                 $reponse->execute();
-        $prix3=$reponse->fetch(); 
-
-        if($prix3['quantity']!=0):?>
-            <div class="element">
-                <p><img id="cart" src="Images/foin_prairie.jpg" width="210"></p>
-                <div class="recapCommande">
-                    <?php 
-                        $reponse2=$bdd->query('SELECT name FROM products WHERE id="3"');
-                        $nom3=$reponse2->fetch();
-                    echo $nom3['name']; ?>
+                    <img id="cart" src="Images/images_produit/<?php echo $produit[0]?>.png" width="210"> </p>
+                    <div class="recapCommande">
+                        <?php 
+                        echo $produit[0];?>
+                    </div>
                     <br/>
-                        <?php echo 'Quantité: ',$prix3['quantity'],' Prix unitaire: ',$prix3['unit_price'],' €';?>
-                </div>
-                <br/>
-                </p>
-            </div>
-        <?php endif ?>
-         
-        <!--on regarde s'il y a une commande du produit 4-->    
-
-        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="4"AND order_id=:id');
-                $reponse->bindParam(':id',$order[0]);
-                $reponse->execute();
-                $prix4=$reponse->fetch(); 
-
-        if($prix4['quantity']!=0):?>
-            <div class="element">
-                <p><img id="cart" src="Images/Mangeoire.jpg" width="210"></p>
-                <div class="recapCommande">
-                    <?php 
-                        $reponse2=$bdd->query('SELECT name FROM products WHERE id="4"');
-                        $nom4=$reponse2->fetch();
-                    echo $nom4['name']; ?>
+                    <div class="recapCommande">
+                    <?php            
+                    echo 'Quantité : ',$data['quantity'],' Prix unitaire: ',$data['unit_price'],' €';
+                    $prix_total = $prix_total + ($data['quantity']*$data['unit_price']);
+                    ?>
+                    </div>
                     <br/>
-                    <?php echo 'Quantité: ',$prix4['quantity'],' Prix unitaire: ',$prix4['unit_price'],' €';?>
+                    </p>
                 </div>
-                <br/>
-                </p>
-            </div>
-        <?php endif ?>
+                <?php
 
-        <!--on regarde s'il y a une commande du produit 5-->    
+            }
+            ?>
 
-        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="5"AND order_id=:id');
-                $reponse->bindParam(':id',$order[0]);
-                $reponse->execute();        
-        $prix5=$reponse->fetch(); 
-
-        if($prix5['quantity']!=0):?>
-            <div class="element">
-                <p><img id="cart" src="Images/Mangeoire.jpg" width="210"></p>
-                <div class="recapCommande">
-                    <?php 
-                        $reponse2=$bdd->query('SELECT name FROM products WHERE id="5"');
-                        $nom5=$reponse2->fetch();
-                    echo $nom4['name']; ?>
-                    <br/>
-                    <?php echo 'Quantité: ',$prix5['quantity'],' Prix unitaire: ',$prix5['unit_price'],' €';?>
-                </div>
-                <br/>
-                </p>
-            </div>
-        <?php endif ?>
-
-        <!--on regarde s'il y a une commande du produit 6-->    
-
-        <p><?php $reponse=$bdd->prepare('SELECT quantity,unit_price FROM order_products WHERE product_id="6"AND order_id=:id');
-                $reponse->bindParam(':id',$order[0]);
-                $reponse->execute();        
-        $prix6=$reponse->fetch(); 
-
-        if($prix6['quantity']!=0):?>
-            <div class="element">
-                <p><img id="cart" src="Images/Mangeoire.jpg" width="210"></p>
-                <div class="recapCommande">
-                    <?php 
-                        $reponse2=$bdd->query('SELECT name FROM products WHERE id="6"');
-                        $nom6=$reponse2->fetch();
-                    echo $nom6['name']; ?>
-                    <br/>
-                    <?php echo 'Quantité: ',$prix6['quantity'],' Prix unitaire: ',$prix6['unit_price'],' €';?>
-                </div>
-                <br/>
-                </p>
-            </div>
-        <?php endif ?>
-    </div>
-        <!--calcul du cout total du panier-->
-        <div class="LastElement">
+            <!--calcul du cout total du panier-->
+            <div class="LastElement">
             <div class="prixCommande">
             <p>
             <?php 
-            $total = $n=$prix1['quantity']*$prix1['unit_price']+$prix2['quantity']*$prix2['unit_price']+$prix3['quantity']*$prix3['unit_price']+$prix4['quantity']*$prix4['unit_price']+$prix5['quantity']*$prix5['unit_price']+$prix6['quantity']*$prix6['unit_price'];
             echo 'COUT TOTAL: ';?>
             <br/>
             <?php 
-            echo $total,'€' ;?>
+            echo $prix_total,'€' ;?>
 
-        <br/>
-        <a href="index.php?page=DeleteAndCreate"><form><input type="button" value="Valider le panier" action='index.php?page=DeleteAndCreate'"/></form></a>
-        
+            <br/>
+            <a href="index.php?page=DeleteAndCreate"><form><input type="button" value="Valider le panier" action='index.php?page=DeleteAndCreate'"/></form></a>
             
-        </p>
-        </div>
-        </div>
+                
+            </p>
+            </div>
+            </div>
+        <?php
+        }
+        else{
+            echo "Connectez-vous pour voir votre panier !";
+        }
+
+        ?>
+        
+        
     </div>
      
     </section>

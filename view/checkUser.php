@@ -38,12 +38,25 @@
           $data = $order_cart_id_ -> fetch();
           $order_cart_id = $data[0];
 
+          //si il n'a pas de panier on lui en crée un
           if(!isset($order_cart_id)){
             $write = $bdd -> prepare ('INSERT INTO orders(user_id,type,status,amount,billing_adress_id,delivery_adress_id) VALUES (:usrid,"CART","CART",0,NULL,NULL)');
             $write -> execute(array(
               'usrid' => $_SESSION['id']
             ));
+
+            $order_cart_id_ = $bdd->prepare("SELECT id FROM orders WHERE user_id=:usrid AND type='CART' ");
+            $order_cart_id_ -> execute(array('usrid'=>$_SESSION['id']));
+            $data = $order_cart_id_ -> fetch();
+            $order_cart_id = $data[0];
+            $_SESSION['idcart'] = $order_cart_id;
+
           }
+          else{
+            $_SESSION['idcart'] = $order_cart_id;
+          }
+
+
 
         }
         else{
