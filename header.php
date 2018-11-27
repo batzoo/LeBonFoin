@@ -28,11 +28,9 @@
 		</br>
 		<?php echo 'Vous êtes connectés, ', $_SESSION['pseudo'];?>
 		</br>
-		<?php	echo 'Deconnexion :';
-		?>
 		</br>
 		<form action="index.php?page=accueil" method="POST">
-        <input type='submit' name='deconnexion' ></form>
+        <input type='submit' name='deconnexion', value="Deconnexion" ></form>
 	</div>
 </div>
 
