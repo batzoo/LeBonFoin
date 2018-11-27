@@ -46,7 +46,9 @@
 </div>
 		<nav>
 			<div id="Menus">
-			<div class="menuCategory"><a href="index.php?page=createAccount">Create Account</a> </div>
+			<?php if (!isset($_SESSION["pseudo"])){
+				echo("<div class='menuCategory'><a href='index.php?page=createAccount'>Create Account</a> </div>");}
+				?>
 			<div class="menuCategory">
 			    <a href="index.php?page=search">Search</a>
 			</div>

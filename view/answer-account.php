@@ -3,7 +3,7 @@
     <section>
        <div href="main.html">
             <center>
-        	<img id="welcomeMainImage" src="Images/login.png">
+        	<img id="welcomeMainImage" src="Images/login.png" width="400" length="400">
             </center>
         </div>
     </section>
