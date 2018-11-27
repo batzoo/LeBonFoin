@@ -45,20 +45,12 @@
 
             }
             
-            
-
         }
         else{
             echo "Connectez-vous pour voir votre panier !";
         }
 
-
-
-
-
-
         ?>
-
         <!--calcul du cout total du panier-->
         <div class="LastElement">
             <div class="prixCommande">
