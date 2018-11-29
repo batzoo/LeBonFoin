@@ -44,10 +44,7 @@
                     <br/>
                     </p>
                 </div>
-                <?php
-
-            }
-            ?>
+                <?php } ?>
 
             <!--calcul du cout total du panier-->
             <div class="LastElement">
@@ -70,8 +67,7 @@
         }
         else{
             echo "Connectez-vous pour voir votre panier !";
-        }
-        ?>
+        }?>
         
         
     </div>

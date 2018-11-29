@@ -6,9 +6,6 @@ if(isset($_POST['supprimer'])){
 			'productid'=>$_GET['productid']
 			));
 		}
-		
-header('Location: index.php?page=panier');
-exit();
 
-}
+header('Location: index.php?page=panier');}
 ?>
