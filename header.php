@@ -16,7 +16,7 @@
 	if(empty($_SESSION['pseudo'])==true){ ?>
 		<div class="connect">
 		</br>
-		<form action='index.php?page=checkUser' method='POST'>
+		<form action='index.php?page=header' method='POST'>
 			<label for="PseudoCo">Pseudo :</label><input type="text" name="pseudoConnexion" /><br />
 			<label for="mdp3">Mot de passe :</label><input type="text" name="mdpConnexion" /><br />
 			<label>    </label><input type='submit' >
