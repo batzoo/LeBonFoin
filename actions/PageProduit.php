@@ -32,6 +32,6 @@
 				}
 		
     	else{
-			echo 'Vous n\'etes pas connecté !';
+			
 		}?>
 		
