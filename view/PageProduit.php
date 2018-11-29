@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
-
 <?php 
 if (isset($_POST['productid'])){
     $productid= $_POST['productid'];

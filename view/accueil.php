@@ -8,7 +8,6 @@
     <section>
 
 <?php
-    $_SESSION['currentpage']="accueil";
 
     if(empty($_SESSION['pseudo'])==true){
     $pseudoCo = 'et bienvenue !';

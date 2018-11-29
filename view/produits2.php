@@ -8,7 +8,6 @@
     <section>
         
         <?php
-        $_SESSION['currentpage']="produits2";
         //chargement d'un tableau $products contenant nom,desc et prix de tous les produits de la BDD
         $reponse = $bdd->query('SELECT name,description,unit_price,id FROM products');
         $products= array();

@@ -57,7 +57,8 @@
         
 
     }
-    header('Location: index.php?page=accueil');
+    $strring = "Location: index.php?page=accueil";
+    header($strring);
     exit();
 ?>
 

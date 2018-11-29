@@ -3,7 +3,6 @@
 <?php  
 session_start();
 include "database.php";
-$_SESSION['currentpage']="accueil";
 ?>
 
 
