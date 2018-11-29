@@ -7,9 +7,7 @@
     </section>
     <section>
 
-<?php
-
-    if(empty($_SESSION['pseudo'])==true){
+<?php if(empty($_SESSION['pseudo'])==true){
     $pseudoCo = 'et bienvenue !';
 }
     else{

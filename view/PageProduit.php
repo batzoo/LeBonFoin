@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+
+
 <?php 
 if (isset($_GET['productid'])){
     $productid= $_GET['productid'];
