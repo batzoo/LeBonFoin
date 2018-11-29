@@ -2,6 +2,7 @@
 <html>
 <body>  
     <section>
+        <?php $_SESSION['currentpage']="contact"; ?>
     	<div class=Contact>
         <h1>N'hesitez pas à nous contacter en cas de problème:</h1>
     	</div>

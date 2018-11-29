@@ -9,6 +9,7 @@
 
         
         <?php
+        $_SESSION['currentpage']="panier";
         //Si on est connecté
         if( !empty($_SESSION['pseudo']) ){
 
