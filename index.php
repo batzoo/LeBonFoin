@@ -16,11 +16,11 @@ else if(isset($_POST['page'])){
 	$page=$_POST['page'];
 }
 include 'header.php';
+	if(file_exists('view/'.$page.'.php')){
+			include 'view/'.$page.'.php';
+		}
 if (file_exists('actions/'.$page.'.php')){
 	include('actions/'.$page.'.php');
-		}
-	elseif(file_exists('view/'.$page.'.php')){
-			include 'view/'.$page.'.php';
 		}
 	
 
