@@ -2,8 +2,8 @@
 <html>
 
 <?php 
-if (isset($_POST['productid'])){
-    $productid= $_POST['productid'];
+if (isset($_GET['productid'])){
+    $productid= $_GET['productid'];
 } else {
     die;
 } 
@@ -40,18 +40,23 @@ endif
 
 		<?php 
 		if( !empty($_SESSION['pseudo']) ){
-		echo
-		"<div class=Formulaire>
-    		<form action='index.php?page=PageProduit' method='post'>
+		?>
+		<div class=Formulaire>
+    		<form action="index.php?page=PageProduit&productid=<?php echo $_GET["productid"]?>" method="post">
 
-        		<label for='Quantity'>Quantité (en kg) :</label>
+        		<label for="Quantity">Quantité (en kg) :</label>
 
-        		<input type='number' name='quantity' /><br />
+        		<input type="number" name="quantity" /><br />
         		
-        		<input type='submit' value='Ajouter'>
+        		<input type='submit' value="Ajouter">
 
-    		</form>    		
-		</div>";}?>
+    		</form>
+    	<?php	
+		}
+    	else{
+			echo 'Vous n\'etes pas connecté !';
+		 }?>
+		</div>
 	</section>
 
 </body>

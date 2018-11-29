@@ -1,3 +1,4 @@
+<!-- ACTION POUR AJOUTER DANS LE PANIER -->
 <?php
 			
 				if( isset($_POST['quantity']) ){
