@@ -6,6 +6,7 @@
      <STYLE>A {text-decoration: none;} </STYLE>
     <section>
         <div id="conteneur">
+
         
         <?php
         //Si on est connecté
@@ -37,6 +38,8 @@
                     echo 'Quantité : ',$data['quantity'],' Prix unitaire: ',$data['unit_price'],' €';
                     $prix_total = $prix_total + ($data['quantity']*$data['unit_price']);
                     ?>
+                    <form action="index.php?page=accueil" method="POST">
+                    <input type='submit' name='deconnexion', value="Supprimer" ></form>
                     </div>
                     <br/>
                     </p>

@@ -1,9 +1,3 @@
-<body>
- 
-  	<div class='titre'>
-        <h1>Connexion</h1>
-    </div>
-
 <?php
     if (empty($_POST["pseudoConnexion"])==FALSE){
 
@@ -30,10 +24,8 @@
 
           $_SESSION['id'] = $user_id;
 
-          echo('Connexion validée, cliquez ci-dessous');
-
           //on regarde si l'user a un panier en cours
-          $order_cart_id_ = $bdd->prepare("SELECT id FROM orders WHERE user_id=:usrid AND type='CART' ");
+          $order_cart_id_ = $bdd->prepare("SELECT id FROM orders WHERE user_id=:usrid AND status='CART' ");
           $order_cart_id_ -> execute(array('usrid'=>$_SESSION['id']));
           $data = $order_cart_id_ -> fetch();
           $order_cart_id = $data[0];
@@ -60,18 +52,15 @@
 
         }
         else{
-          echo('Connexion invalide.');
         }
         
         
 
     }
+    header('Location: index.php?page=accueil');
+    exit();
 ?>
 
-    <form action="index.php?page=accueil" method="POST">
-        <label>    
-        </label><input type='submit' >
-    </form> 
+    
 
     
- </body>
