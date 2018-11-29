@@ -1,7 +1,9 @@
 <body>
+
  	<div><?php
+    if(isset($_POST["recherche"])){
  		$recherche = $_POST["recherche"];
-		$reponse=$bdd->prepare('SELECT name,unit_price,description FROM products WHERE name=:recherche');
+		$reponse=$bdd->prepare('SELECT name,unit_price,description FROM products WHERE name LIKE :recherche');
 		$reponse->execute(array(
 			'recherche'=>$recherche
 		));
@@ -12,7 +14,8 @@
             echo 'Prix : ', $nom['unit_price'], ' €';?>
             <br/>
             <?php
-            echo 'Description du produit:', $nom['description'];?>
+            echo 'Description du produit:', $nom['description'];
+            echo "TEUB TEUB TEUB TEUB";}?>
             </p>
     	</a></div>
 
