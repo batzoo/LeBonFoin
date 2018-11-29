@@ -55,7 +55,7 @@ endif
     		</form>
     	<?php	
 		}
-    	else{
+		if(!isset($_SESSION['pseudo'])){
 			echo 'Vous n\'etes pas connecté !';
 		 }?>
 		</div>
