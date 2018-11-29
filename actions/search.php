@@ -15,7 +15,7 @@
             <br/>
             <?php
             echo 'Description du produit:', $nom['description'];
-            echo "TEUB TEUB TEUB TEUB";}?>
+           }?>
             </p>
     	</a></div>
 

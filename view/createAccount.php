@@ -6,7 +6,8 @@
             </center>
         </div>
     </section>
-    <?php  $pseudo="";?>
+
+    <?php $pseudo="";?>
     <div class=Formulaire>
     <form action='index.php?page=createAccount' method='POST'>
         <label for="Pseudo">Pseudo :</label><input type="text" name="pseudo" /><br />

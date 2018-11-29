@@ -53,14 +53,7 @@
         }
         else{
         }
-        
-        
-
     }
     header('Location: index.php?page=accueil');
     exit();
 ?>
-
-    
-
-    

@@ -38,8 +38,8 @@
                     echo 'Quantité : ',$data['quantity'],' Prix unitaire: ',$data['unit_price'],' €';
                     $prix_total = $prix_total + ($data['quantity']*$data['unit_price']);
                     ?>
-                    <form action="index.php?page=accueil" method="POST">
-                    <input type='submit' name='deconnexion', value="Supprimer" ></form>
+                    <form action="index.php?page=panier&productid=<?php echo($data['product_id']);?>" method="POST">
+                    <input type='submit' name='supprimer', value="Supprimer" ></form>
                     </div>
                     <br/>
                     </p>
@@ -71,7 +71,6 @@
         else{
             echo "Connectez-vous pour voir votre panier !";
         }
-
         ?>
         
         
